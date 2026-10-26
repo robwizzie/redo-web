@@ -1,41 +1,6 @@
-/* Revamp Web — shared site behaviour (no dependencies) */
+/* Revamp Web: shared site behaviour (no dependencies). The gradient lives in gradient.js. */
 (() => {
   const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-
-  /* Animated gradient band. Drawn small and upscaled by the browser,
-     which gives the soft Stripe-style blend for almost no cost. */
-  const BLOBS = [
-    { c: [168, 200, 255], r: 0.55, x: 0.15, y: 0.2, sx: 0.07, sy: 0.05, s: 0.00011 },
-    { c: [94, 148, 247], r: 0.6, x: 0.55, y: 0.35, sx: 0.12, sy: 0.08, s: 0.00009 },
-    { c: [42, 95, 216], r: 0.5, x: 0.85, y: 0.65, sx: 0.08, sy: 0.12, s: 0.00013 },
-    { c: [124, 214, 255], r: 0.42, x: 0.7, y: 0.1, sx: 0.1, sy: 0.06, s: 0.00016 },
-    { c: [232, 240, 254], r: 0.45, x: 0.05, y: 0.85, sx: 0.05, sy: 0.08, s: 0.0001 },
-    { c: [14, 31, 69], r: 0.35, x: 1.0, y: 0.9, sx: 0.06, sy: 0.05, s: 0.00012 },
-  ];
-  document.querySelectorAll(".band__canvas").forEach((canvas) => {
-    const ctx = canvas.getContext("2d");
-    const W = 96, H = 48;
-    canvas.width = W; canvas.height = H;
-    const draw = (t) => {
-      ctx.fillStyle = "rgb(150,190,255)";
-      ctx.fillRect(0, 0, W, H);
-      for (const [i, b] of BLOBS.entries()) {
-        const x = (b.x + Math.sin(t * b.s + i) * b.sx) * W;
-        const y = (b.y + Math.cos(t * b.s * 1.3 + i * 2) * b.sy) * H;
-        const r = b.r * W;
-        const g = ctx.createRadialGradient(x, y, 0, x, y, r);
-        g.addColorStop(0, `rgba(${b.c},0.95)`);
-        g.addColorStop(1, `rgba(${b.c},0)`);
-        ctx.fillStyle = g;
-        ctx.fillRect(0, 0, W, H);
-      }
-    };
-    if (reduceMotion) { draw(0); return; }
-    let visible = true;
-    new IntersectionObserver(([e]) => { visible = e.isIntersecting; }).observe(canvas);
-    const loop = (t) => { if (visible) draw(t); requestAnimationFrame(loop); };
-    requestAnimationFrame(loop);
-  });
 
   /* Sticky header + mobile menu */
   const header = document.querySelector(".site-header");

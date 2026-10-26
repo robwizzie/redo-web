@@ -9,12 +9,16 @@ Everything is plain HTML, CSS and JS with no build step. Open `index.html` in a 
 | Path | What it is |
 | --- | --- |
 | `index.html` | Concept board. Start here to compare the options. |
-| `site/` | **Direction A · Signal**, a full 4-page site: home, work, pricing, contact |
-| `concepts/midnight.html` | **Direction B · Midnight**, a dark one-page concept |
-| `concepts/blueprint.html` | **Direction C · Blueprint**, a technical drawing one-page concept |
+| `site/` | **Signal**, the main site in dark mode: home, work, pricing, contact |
+| `concepts/midnight.html` | **Midnight**, an alternate one-page concept |
+| `concepts/blueprint.html` | **Blueprint**, an alternate one-page concept |
 | `business-cards/` | 4 card designs (front and back, Rob and Dave) plus print exports |
 | `assets/brand/` | Original logo PNG and vector versions (`rw-logo.svg`, `rw-logo-flat.svg`) |
-| `assets/css`, `assets/js` | Shared styles and scripts for the Signal site |
+| `assets/css`, `assets/js` | Shared styles and scripts for Signal. `gradient.js` is the WebGL mesh gradient. |
+
+## The gradient
+
+`assets/js/gradient.js` uses the same technique as Stripe's homepage gradient, written from scratch for us. A dense plane mesh is lifted by 3D simplex noise, and each vertex is colored by stacking three noise-driven wave layers over a base color. Colors come from `--gradient-1` to `--gradient-4` in `site.css`. The canvas sits in a `skewY(-12deg)` band, pauses when off-screen and renders one still frame for people who prefer reduced motion. Without WebGL it falls back to a CSS gradient.
 
 ## Brand
 

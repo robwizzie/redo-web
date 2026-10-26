@@ -34,7 +34,7 @@ p { margin: 0; }
 .wrap { max-width: 1120px; margin-inline: auto; padding-block: 56px 96px; padding-left: max(20px, env(safe-area-inset-left, 0px)); padding-right: max(20px, env(safe-area-inset-right, 0px)); display: grid; gap: 80px; }
 @media (max-width: 480px) { .wrap { padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); } }
 .wrap > * { min-width: 0; }
-.label { font-family: var(--mono); font-size: .74rem; letter-spacing: .1em; text-transform: uppercase; color: var(--blue); }
+.label { font-family: var(--display); font-weight: 700; font-size: 1rem; letter-spacing: -0.01em; color: #8DB4FF; }
 
 .intro { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 32px; align-items: center; }
 .intro img { width: 120px; }
@@ -99,31 +99,31 @@ footer { color: var(--dim); font-size: .85rem; border-top: 1px solid var(--line)
   <header class="intro">
     <img src="assets/brand/rw-logo.svg" alt="Revamp Web logo">
     <div>
-      <span class="label">Concept board · for Rob &amp; Dave</span>
+      <span class="label">Concept board for Rob and Dave</span>
       <h1>Revamp Web</h1>
-      <p>Three directions for the agency site, four business card designs and a starting price sheet. All of it uses the RW mark and its exact blue. Click through, pick a favorite (or mix and match) and we'll flesh it out.</p>
+      <p>The main site is Signal: dark, with a Stripe-style moving gradient in our blues. Midnight and Blueprint are two alternate directions. Below those are four business card designs and a starting price sheet.</p>
     </div>
   </header>
 
   <section>
     <div class="sec-head">
-      <span class="label">01 · Website directions</span>
-      <h2>Pick a look</h2>
-      <p>Signal is a full working site: home, work, pricing and contact. Midnight and Blueprint are one-page concepts showing a different personality with the same content.</p>
+      <span class="label">Website</span>
+      <h2>Signal, plus two alternates</h2>
+      <p>Signal is a full working site with home, work, pricing and contact pages. Midnight and Blueprint are one-page concepts with the same content in a different personality.</p>
     </div>
     <div class="concepts">
       <article class="concept">
         <a href="site/index.html"><img src="assets/previews/signal.jpg" alt="Signal concept homepage"></a>
         <div class="concept__body">
-          <h3>A · Signal <span class="pick">Full site</span></h3>
-          <p>Light and polished, the closest to Stripe. An animated blue gradient band and a drag-to-compare "before and after" site in the hero. It reads as trustworthy to any business owner.</p>
+          <h3>Signal <span class="pick">Main site</span></h3>
+          <p>Dark mode, built the way Stripe builds theirs: a WebGL mesh gradient in angled bands, faint column guides and quiet hairline layouts. The hero has a before-and-after site you can drag.</p>
           <div class="links"><a href="site/index.html">Home</a><a href="site/work.html">Work</a><a href="site/pricing.html">Pricing</a><a href="site/contact.html">Contact</a></div>
         </div>
       </article>
       <article class="concept">
         <a href="concepts/midnight.html"><img src="assets/previews/midnight.jpg" alt="Midnight concept homepage"></a>
         <div class="concept__body">
-          <h3>B · Midnight <span>Landing page</span></h3>
+          <h3>Midnight <span>Alternate</span></h3>
           <p>Dark, loud and techy. The logo glows over a moving grid floor, with heavy expanded type and services rows that flood blue on hover. Shows off the most.</p>
           <div class="links"><a href="concepts/midnight.html">Open concept</a></div>
         </div>
@@ -131,7 +131,7 @@ footer { color: var(--dim); font-size: .85rem; border-top: 1px solid var(--line)
       <article class="concept">
         <a href="concepts/blueprint.html"><img src="assets/previews/blueprint.jpg" alt="Blueprint concept homepage"></a>
         <div class="concept__body">
-          <h3>C · Blueprint <span>Landing page</span></h3>
+          <h3>Blueprint <span>Alternate</span></h3>
           <p>A website drawn as a technical drawing. Graph-paper background, a wireframe that draws itself and a "Main Street Approved" stamp. Friendly, smart and different.</p>
           <div class="links"><a href="concepts/blueprint.html">Open concept</a></div>
         </div>
@@ -141,7 +141,7 @@ footer { color: var(--dim); font-size: .85rem; border-top: 1px solid var(--line)
 
   <section>
     <div class="sec-head">
-      <span class="label">02 · Business cards</span>
+      <span class="label">Business cards</span>
       <h2>Four cards, ready to print</h2>
     </div>
     <div class="cards-row">
@@ -160,7 +160,7 @@ footer { color: var(--dim); font-size: .85rem; border-top: 1px solid var(--line)
 
   <section>
     <div class="sec-head">
-      <span class="label">03 · Brand basics</span>
+      <span class="label">Brand</span>
       <h2>Colors from the logo</h2>
       <p>The blue is sampled straight from the RW mark. Use the deep blue for text links on white, since the logo blue is too light for small text there.</p>
     </div>
@@ -174,7 +174,7 @@ footer { color: var(--dim); font-size: .85rem; border-top: 1px solid var(--line)
 
   <section>
     <div class="sec-head">
-      <span class="label">04 · Pricing</span>
+      <span class="label">Pricing</span>
       <h2>Suggested starting prices</h2>
       <p>Set to undercut agencies ($8k–$25k for similar work) while staying above DIY builders, so the price signals custom work. Raise prices after Trouble Brewing launches and the portfolio grows.</p>
     </div>
@@ -200,7 +200,7 @@ footer { color: var(--dim); font-size: .85rem; border-top: 1px solid var(--line)
 
   <section>
     <div class="sec-head">
-      <span class="label">05 · Before launch</span>
+      <span class="label">Before launch</span>
       <h2>Open items</h2>
     </div>
     <div class="todo">

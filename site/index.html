@@ -4,231 +4,210 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Revamp Web</title>
-<meta name="description" content="Revamp Web designs, builds and hosts modern websites for growing businesses. One small team, start to finish.">
+<meta name="description" content="Revamp Web designs, builds and hosts websites for small and growing businesses. Two people, start to finish.">
+<meta name="theme-color" content="#05070D">
 <link rel="icon" href="../assets/brand/rw-logo.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600&family=Schibsted+Grotesk:wght@600;700;800&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600&family=JetBrains+Mono:wght@500&family=Schibsted+Grotesk:wght@500;600;700;800&display=swap">
 <link rel="stylesheet" href="../assets/css/site.css">
 </head>
 <body>
 
 <header class="site-header">
   <div class="wrap nav">
-    <a class="brand" href="index.html"><img src="../assets/brand/rw-logo.svg" alt="" width="34" height="37">Revamp Web</a>
+    <a class="brand" href="index.html"><img src="../assets/brand/rw-logo.svg" alt="" width="30" height="33">Revamp Web</a>
     <nav class="nav-links" aria-label="Main">
-      <a href="index.html" aria-current="page">Home</a>
       <a href="work.html">Work</a>
       <a href="pricing.html">Pricing</a>
       <a href="contact.html">Contact</a>
     </nav>
     <div class="nav-cta">
-      <a class="btn btn--ghost" href="pricing.html">See pricing</a>
-      <a class="btn" href="contact.html">Start a project <span class="arrow">→</span></a>
+      <a class="link" href="contact.html" style="margin-right:14px">Book a call<span class="harrow" aria-hidden="true"><svg viewBox="0 0 10 10"><path class="harrow__line" d="M0 5h7"/><path class="harrow__tip" d="M1 1l4 4-4 4"/></svg></span></a>
+      <a class="btn" href="contact.html">Start a project<span class="harrow" aria-hidden="true"><svg viewBox="0 0 10 10"><path class="harrow__line" d="M0 5h7"/><path class="harrow__tip" d="M1 1l4 4-4 4"/></svg></span></a>
     </div>
-    <button class="menu-btn" aria-label="Open menu" aria-expanded="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+    <button class="menu-btn" aria-label="Open menu" aria-expanded="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 8h16M4 16h16"/></svg></button>
   </div>
 </header>
 
 <main>
-  <!-- HERO -->
+  <div class="guides" aria-hidden="true"><div class="wrap"><span></span><span></span><span></span><span></span></div></div>
   <section class="hero">
-    <div class="band" aria-hidden="true"><canvas class="band__canvas"></canvas></div>
+    <div class="gband" data-gradient-wrap aria-hidden="true"><canvas data-gradient></canvas></div>
     <div class="wrap hero__grid">
       <div class="hero__copy">
-        <span class="eyebrow" style="color:var(--ink)">Web design · Development · Hosting</span>
-        <h1>Your website, <span class="swap">revamped.</span></h1>
-        <p class="lede" style="color:var(--ink)">We design, build and host modern websites for growing businesses. One small team takes you from the first sketch to the live server, so you get one point of contact instead of five accounts.</p>
+        <h1>Your website, revamped.</h1>
+        <p class="sub">We're Rob and Dave. Rob designs and codes your site by hand. Dave hosts it and keeps it running. When you need something changed, you message one of us directly.</p>
         <div class="hero__actions">
-          <a class="btn btn--brand" href="contact.html">Start a project <span class="arrow">→</span></a>
-          <a class="btn btn--light" href="work.html">See our work</a>
+          <a class="btn" href="contact.html">Start a project<span class="harrow" aria-hidden="true"><svg viewBox="0 0 10 10"><path class="harrow__line" d="M0 5h7"/><path class="harrow__tip" d="M1 1l4 4-4 4"/></svg></span></a>
+          <a class="link" href="pricing.html">See pricing<span class="harrow" aria-hidden="true"><svg viewBox="0 0 10 10"><path class="harrow__line" d="M0 5h7"/><path class="harrow__tip" d="M1 1l4 4-4 4"/></svg></span></a>
         </div>
-        <p class="hero__note"><span class="dot"></span>Booking new projects now. Replies within one business day.</p>
+        <p class="hero__fine">Sites from <b>$1,800</b>. Hosting from <b>$39/mo</b>.</p>
       </div>
 
       <div class="revamp">
-        <div class="revamp__frame" style="--pos:50%">
-          <div class="revamp__chrome" aria-hidden="true"><i></i><i></i><i></i><span>rosiesbakery.com</span></div>
-          <div class="revamp__layer revamp__before" aria-hidden="true">
-            <div class="old">
-              <div class="old__title">~*~ Rosie's Bakery ~*~</div>
-              <div class="old__marquee"><span>!!! NOW TAKING ORDERS BY FAX !!! CALL FOR HOURS !!!</span></div>
-              <div class="old__cols">
-                <div class="old__nav"><u>Home</u><u>About Us</u><u>Our Breads</u><u>Guestbook</u><u>Links</u></div>
-                <div class="old__body">
-                  <div class="old__img">[ bakery.jpg ]</div>
-                  <div>Welcome to our website!! Please sign our guestbook. Click <u style="color:#00E">HERE</u> for directions.</div>
+        <div class="revamp__tilt">
+          <div class="revamp__frame" style="--pos:50%">
+            <div class="revamp__chrome" aria-hidden="true"><i></i><i></i><i></i><span>rosiesbakery.com</span></div>
+            <div class="revamp__layer" aria-hidden="true">
+              <div class="old">
+                <div class="old__title">~*~ Rosie's Bakery ~*~</div>
+                <div class="old__marquee"><span>!!! NOW TAKING ORDERS BY FAX !!! CALL FOR HOURS !!!</span></div>
+                <div class="old__cols">
+                  <div class="old__nav"><u>Home</u><u>About Us</u><u>Our Breads</u><u>Guestbook</u><u>Links</u></div>
+                  <div class="old__body">
+                    <div class="old__img">[ bakery.jpg ]</div>
+                    <div>Welcome to our website!! Please sign our guestbook. Click <u style="color:#00E">HERE</u> for directions.</div>
+                  </div>
                 </div>
-              </div>
-              <div class="old__counter">You are visitor # <b>004521</b> · Best viewed in 800×600</div>
-            </div>
-          </div>
-          <div class="revamp__layer revamp__after" aria-hidden="true">
-            <div class="new">
-              <div class="new__nav"><span class="new__logo">Rosie's</span><span class="new__links"><span>Menu</span><span>Story</span><span>Visit</span></span><span class="new__pill">Order ahead</span></div>
-              <div class="new__hero">
-                <div>
-                  <h4>Fresh bread, every morning.</h4>
-                  <p>Sourdough, pastries and custom cakes, baked on Main Street since 1998.</p>
-                  <div class="new__btns"><span>Order for pickup</span><span>See the menu</span></div>
-                </div>
-                <div class="new__art"></div>
-              </div>
-              <div class="new__cards">
-                <div><b>Country sourdough</b><i>$9</i></div>
-                <div><b>Morning buns</b><i>$4</i></div>
-                <div><b>Custom cakes</b><i>From $45</i></div>
+                <div class="old__counter">You are visitor # <b>004521</b> · Best viewed in 800×600</div>
               </div>
             </div>
+            <div class="revamp__layer revamp__after" aria-hidden="true">
+              <div class="new">
+                <div class="new__nav"><span class="new__logo">Rosie's</span><span class="new__links"><span>Menu</span><span>Story</span><span>Visit</span></span><span class="new__pill">Order ahead</span></div>
+                <div class="new__hero">
+                  <div>
+                    <h4>Fresh bread, every morning.</h4>
+                    <p>Sourdough, pastries and custom cakes, baked on Main Street since 1998.</p>
+                    <div class="new__btns"><span>Order for pickup</span><span>See the menu</span></div>
+                  </div>
+                  <div class="new__art"></div>
+                </div>
+                <div class="new__cards">
+                  <div><b>Country sourdough</b><i>$9</i></div>
+                  <div><b>Morning buns</b><i>$4</i></div>
+                  <div><b>Custom cakes</b><i>From $45</i></div>
+                </div>
+              </div>
+            </div>
+            <input class="revamp__range" type="range" min="0" max="100" value="50" step="0.5" id="revamp-range" aria-label="Drag to compare the old and revamped website">
+            <div class="revamp__handle"><div class="revamp__knob"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l-6 6 6 6M15 6l6 6-6 6"/></svg></div></div>
           </div>
-          <input class="revamp__range" type="range" min="0" max="100" value="50" step="0.5" id="revamp-range" aria-label="Drag to compare the old and revamped website">
-          <div class="revamp__handle"><div class="revamp__knob"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l-6 6 6 6M15 6l6 6-6 6"/></svg></div></div>
         </div>
-        <div class="revamp__tags"><span>Before</span><span>Drag to compare</span><b>After</b></div>
+        <p class="revamp__caption"><span>Rosie's Bakery, before and after</span><span>Drag the handle</span></p>
       </div>
     </div>
   </section>
 
-  <!-- SERVICES -->
+  <section class="section">
+    <div class="wrap letter">
+      <div class="reveal">
+        <p class="kicker">Who you'd be working with</p>
+        <h2 style="margin-top:14px">Two people, start to finish.</h2>
+      </div>
+      <div class="reveal">
+        <div class="letter__body">
+          <p>Most small businesses end up juggling a designer, a developer, a hosting company and a domain registrar, and none of them talk to each other. We started Revamp Web so all of that is one conversation.</p>
+          <p>Nothing gets handed off to someone you've never met. The two people on your first call are the two people who build your site, put it online and answer when you need a change.</p>
+        </div>
+        <div class="owners" style="margin-top:36px">
+          <div class="owner"><span class="owner__mono">RW</span><div><h3>Rob Wiscount</h3><small>Design and front-end</small><p>Layout, type, color, motion and the code that runs in your customer's browser.</p></div></div>
+          <div class="owner"><span class="owner__mono">D</span><div><h3>Dave</h3><small>Back-end and hosting</small><p>Servers, deploys, domains, email, backups and security. The parts you never want to think about.</p></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section class="section">
     <div class="wrap">
-      <div class="section-head reveal">
-        <span class="eyebrow">What we do</span>
-        <h2>Everything your website needs, handled by people you can text.</h2>
-        <p>No page builders, no templates, no hand-offs to a support queue. We build each site from scratch and keep it running after launch.</p>
+      <div class="intro reveal">
+        <p class="kicker">Launch day</p>
+        <h2>What's done before we call it finished.</h2>
+        <p>Every build ends with the same checklist, whatever the package. If something on it isn't done, the site isn't live yet.</p>
       </div>
-      <div class="services">
-        <article class="service reveal">
-          <div class="service__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/><path d="M2 2l7.586 7.586"/><circle cx="11" cy="11" r="2"/></svg></div>
-          <h3>Design</h3>
-          <p>A custom look built around your brand, your customers and the one thing you want them to do.</p>
-          <ul><li>Brand-matched layouts</li><li>Mobile-first</li><li>Motion and detail</li></ul>
-        </article>
-        <article class="service reveal">
-          <div class="service__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M16 18l6-6-6-6M8 6l-6 6 6 6"/></svg></div>
-          <h3>Development</h3>
-          <p>Hand-written, fast-loading code. Menus, booking, online orders and forms that actually reach you.</p>
-          <ul><li>Fast page loads</li><li>Editable content</li><li>Integrations</li></ul>
-        </article>
-        <article class="service reveal">
-          <div class="service__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="7" rx="2"/><rect x="2" y="14" width="20" height="7" rx="2"/><path d="M6 6.5h.01M6 17.5h.01"/></svg></div>
-          <h3>Hosting &amp; care</h3>
-          <p>We run the servers, renew the SSL, take the backups and watch for downtime, so you never log in to a hosting dashboard.</p>
-          <ul><li>Daily backups</li><li>Uptime monitoring</li><li>Monthly edits</li></ul>
-        </article>
-        <article class="service reveal">
-          <div class="service__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M7 15l4-4 3 3 6-6"/></svg></div>
-          <h3>Search &amp; speed</h3>
-          <p>Clean structure, real page titles and a Google Business Profile that points to you. We aim for 90+ Lighthouse scores on every launch.</p>
-          <ul><li>On-page SEO</li><li>Analytics setup</li><li>Speed tuning</li></ul>
-        </article>
-      </div>
+      <ul class="checklist">
+        <li class="reveal"><svg viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="9.5" opacity=".45"/><path d="M6.8 11.3l2.8 2.8 5.6-6"/></svg><div><b>Designed for your business</b><span>Every page laid out from scratch around your brand. No themes.</span></div></li>
+        <li class="reveal"><svg viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="9.5" opacity=".45"/><path d="M6.8 11.3l2.8 2.8 5.6-6"/></svg><div><b>Tested on real phones</b><span>iPhone, Android and a couple of old laptops, not just a resized browser.</span></div></li>
+        <li class="reveal"><svg viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="9.5" opacity=".45"/><path d="M6.8 11.3l2.8 2.8 5.6-6"/></svg><div><b>Domain and SSL connected</b><span>Your address works with and without www, and the padlock shows.</span></div></li>
+        <li class="reveal"><svg viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="9.5" opacity=".45"/><path d="M6.8 11.3l2.8 2.8 5.6-6"/></svg><div><b>Forms that reach you</b><span>Every contact form is tested end to end and copies land in a backup inbox.</span></div></li>
+        <li class="reveal"><svg viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="9.5" opacity=".45"/><path d="M6.8 11.3l2.8 2.8 5.6-6"/></svg><div><b>Google can find you</b><span>Page titles, descriptions and your Google Business Profile all point to the new site.</span></div></li>
+        <li class="reveal"><svg viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="9.5" opacity=".45"/><path d="M6.8 11.3l2.8 2.8 5.6-6"/></svg><div><b>Fast on a slow connection</b><span>We check page speed before launch and aim for a Lighthouse score of 90 or more.</span></div></li>
+        <li class="reveal"><svg viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="9.5" opacity=".45"/><path d="M6.8 11.3l2.8 2.8 5.6-6"/></svg><div><b>Analytics you can read</b><span>A simple dashboard showing visits and where they came from.</span></div></li>
+        <li class="reveal"><svg viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="9.5" opacity=".45"/><path d="M6.8 11.3l2.8 2.8 5.6-6"/></svg><div><b>Backups switched on</b><span>Daily copies of your site, kept for 30 days.</span></div></li>
+        <li class="reveal"><svg viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="9.5" opacity=".45"/><path d="M6.8 11.3l2.8 2.8 5.6-6"/></svg><div><b>A walkthrough with us</b><span>A 30-minute call showing you how to update the things you'll change most.</span></div></li>
+      </ul>
     </div>
   </section>
 
-  <!-- ONE TEAM -->
-  <section class="section" style="padding-top:0">
+  <section class="section">
     <div class="wrap">
-      <div class="team reveal">
-        <div class="team__copy">
-          <span class="eyebrow">One team, start to finish</span>
-          <h2>A designer and an engineer. That's the whole team.</h2>
-          <p>Rob designs and builds what you see. Dave runs everything behind it: hosting, domains, email, security and backups. You talk to the people doing the work.</p>
-        </div>
-        <div class="team__pair">
-          <div class="person">
-            <div class="person__avatar">RW</div>
-            <small>Design &amp; front-end</small>
-            <h3>Rob Wiscount</h3>
-            <ul><li>Brand and layout</li><li>Animation and interaction</li><li>Front-end build</li></ul>
-          </div>
-          <div class="person">
-            <div class="person__avatar">D</div>
-            <small>Back-end &amp; hosting</small>
-            <h3>Dave</h3>
-            <ul><li>Servers and deploys</li><li>Domains, DNS and email</li><li>Security and backups</li></ul>
-          </div>
-          <div class="team__vs">
-            <div class="vs vs--no"><b>The usual way</b>A designer, a developer, a hosting company, a domain registrar and a plugin vendor.</div>
-            <div class="vs vs--yes"><b>With Revamp Web</b>One invoice, one group text and one team that knows your site inside out.</div>
-          </div>
-        </div>
+      <div class="intro reveal">
+        <p class="kicker">How a project runs</p>
+        <h2>About four weeks from first call to launch.</h2>
       </div>
-    </div>
-  </section>
-
-  <!-- PROCESS -->
-  <section class="section section--soft">
-    <div class="wrap">
-      <div class="section-head reveal">
-        <span class="eyebrow">How it works</span>
-        <h2>From first call to launch in about four weeks.</h2>
-      </div>
-      <ol class="process" style="list-style:none;padding:0;margin:0">
-        <li class="step reveal"><span class="step__num">1</span><time>Week 0</time><h3>Discovery call</h3><p>30 minutes on your business, your customers and what the site needs to do. You get a fixed quote within two days.</p></li>
-        <li class="step reveal"><span class="step__num">2</span><time>Week 1–2</time><h3>Design</h3><p>We design the key pages and share a clickable preview. Two rounds of changes are included.</p></li>
-        <li class="step reveal"><span class="step__num">3</span><time>Week 2–4</time><h3>Build</h3><p>We build it on a private staging link you can check from your phone at any point.</p></li>
-        <li class="step reveal"><span class="step__num">4</span><time>Launch</time><h3>Launch &amp; host</h3><p>We connect your domain, go live and keep watching it. Edits are a text away.</p></li>
+      <ol class="timeline">
+        <li class="reveal"><time>Week 0</time><h3>Discovery call</h3><p>Thirty minutes on your business and your customers. A fixed quote follows within two days.</p></li>
+        <li class="reveal"><time>Weeks 1–2</time><h3>Design</h3><p>We design the key pages and send a clickable preview. Two rounds of changes are included.</p></li>
+        <li class="reveal"><time>Weeks 2–4</time><h3>Build</h3><p>The site goes up on a private link you can check from your phone at any point.</p></li>
+        <li class="reveal"><time>Launch</time><h3>Go live</h3><p>Dave points your domain at the new site and we watch it closely for the first week.</p></li>
       </ol>
     </div>
   </section>
 
-  <!-- WORK -->
   <section class="section">
     <div class="wrap">
-      <div class="section-head reveal" style="margin-bottom:40px">
-        <span class="eyebrow">Recent work</span>
+      <div class="intro reveal" style="margin-bottom:44px">
+        <p class="kicker">Recent work</p>
         <h2>Sites we've built.</h2>
       </div>
-      <div class="work-grid">
-        <a class="work-card reveal" href="work.html#trouble-brewing">
-          <div class="work-card__shot"><div class="shot shot--brew"><div class="shot__bar"><i></i><i></i><i></i></div><div class="shot__body"><div class="shot__h">Trouble<br>Brewing</div><div class="shot__row"><span style="width:30%"></span><span style="width:18%"></span></div></div></div></div>
-          <div class="work-card__meta"><h3>Trouble Brewing</h3><span class="tag tag--soon">Launching soon</span></div>
-          <p>Craft brewery website: taproom, beers and events.</p>
+      <div class="work">
+        <a class="work-item reveal" href="work.html#trouble-brewing">
+          <div class="work-item__shot"><div class="shot shot--brew"><div class="shot__bar"><i></i><i></i><i></i></div><div class="shot__body"><div class="shot__h">Trouble<br>Brewing</div><div class="shot__row"><span style="width:26%"></span><span style="width:16%"></span></div></div></div></div>
+          <div class="work-item__meta"><h3>Trouble Brewing</h3><span class="status status--soon">Launching soon</span></div>
+          <p>A craft brewery site with the taproom, the beers and upcoming events up front.</p>
         </a>
-        <a class="work-card reveal" href="work.html#juice">
-          <div class="work-card__shot"><div class="shot shot--juice"><div class="shot__bar"><i></i><i></i><i></i></div><div class="shot__body"><div class="shot__h">Cold-<br>pressed.</div><div class="shot__row"><span style="width:26%"></span><span style="width:20%"></span></div></div></div></div>
-          <div class="work-card__meta"><h3>Juice company</h3><span class="tag">Live</span></div>
-          <p>Bright, product-first brand site for a juice company.</p>
+        <a class="work-item reveal" href="work.html#juice">
+          <div class="work-item__shot"><div class="shot shot--juice"><div class="shot__bar"><i></i><i></i><i></i></div><div class="shot__body"><div class="shot__h">Cold-<br>pressed.</div></div></div></div>
+          <div class="work-item__meta"><h3>Juice company</h3><span class="status">Live</span></div>
+          <p>A bright, product-first brand site.</p>
         </a>
-        <a class="work-card reveal" href="work.html#portfolio">
-          <div class="work-card__shot"><div class="shot shot--folio"><div class="shot__bar"><i></i><i></i><i></i></div><div class="shot__body"><div class="shot__h">Robert<br>Wiscount<span>.</span></div><div class="shot__row"><span style="width:22%"></span><span style="width:22%"></span><span style="width:22%"></span></div></div></div></div>
-          <div class="work-card__meta"><h3>Rob's portfolio</h3><span class="tag">Live</span></div>
-          <p>Personal developer portfolio and the home of the RW mark.</p>
+        <a class="work-item reveal" href="work.html#portfolio">
+          <div class="work-item__shot"><div class="shot shot--folio"><div class="shot__bar"><i></i><i></i><i></i></div><div class="shot__body"><div class="shot__h">Robert<br>Wiscount<span>.</span></div></div></div></div>
+          <div class="work-item__meta"><h3>Rob's portfolio</h3><span class="status">Live</span></div>
+          <p>Where the RW mark started, and where we try new ideas first.</p>
         </a>
       </div>
     </div>
   </section>
 
-  <!-- SMALL BUSINESS -->
-  <section class="section" style="padding-top:0">
+  <section class="section">
     <div class="wrap">
-      <div class="mainstreet reveal">
+      <div class="intro reveal">
+        <p class="kicker">Pricing</p>
+        <h2>Fixed quotes, written down before we start.</h2>
+      </div>
+      <div class="price-strip reveal">
+        <div><h3>Launch</h3><div class="amt">$1,800</div><p>Up to 5 pages. Live in about 3 weeks.</p></div>
+        <div><h3>Growth</h3><div class="amt">$4,200</div><p>Up to 12 pages you can edit yourself.</p></div>
+        <div><h3>Custom</h3><div class="amt"><small>from</small>$8,500</div><p>Online stores, booking and integrations.</p></div>
+      </div>
+      <div class="price-strip__foot"><span>Hosting and care plans run from $39 to $249 a month.</span><a class="link" href="pricing.html">Compare plans<span class="harrow" aria-hidden="true"><svg viewBox="0 0 10 10"><path class="harrow__line" d="M0 5h7"/><path class="harrow__tip" d="M1 1l4 4-4 4"/></svg></span></a></div>
+
+      <div class="mainstreet reveal" style="margin-top:72px" id="main-street">
         <div>
-          <span class="eyebrow">Main Street Program</span>
           <h2>Small business on a tight budget? Talk to us anyway.</h2>
-          <p>If you run a local shop, a food truck, a salon or a one-person service business, tell us what you can spend. We'll scope a site that fits it and never pad the quote.</p>
-          <a class="btn" href="contact.html?budget=small-business">Tell us your budget <span class="arrow">→</span></a>
+          <p>If you run a corner shop, a food truck, a salon or a one-person service business, tell us what you can spend. We'll build the best site that fits it and never pad the quote.</p>
+          <a class="btn" href="contact.html?budget=small-business">Tell us your budget<span class="harrow" aria-hidden="true"><svg viewBox="0 0 10 10"><path class="harrow__line" d="M0 5h7"/><path class="harrow__tip" d="M1 1l4 4-4 4"/></svg></span></a>
         </div>
         <ul>
-          <li><b>01</b>Pricing scoped to your budget</li>
-          <li><b>02</b>Split payments over 3–6 months</li>
-          <li><b>03</b>Start small, add pages as you grow</li>
-          <li><b>04</b>Nonprofit and new-business discounts</li>
+          <li>Quotes built around your number</li>
+          <li>Payments split over three to six months</li>
+          <li>Start with one good page, add more later</li>
+          <li>Lower hosting for qualifying businesses</li>
         </ul>
       </div>
     </div>
   </section>
 
-  <!-- CTA -->
-  <section class="cta">
-    <div class="band" aria-hidden="true"><canvas class="band__canvas"></canvas></div>
-    <div class="wrap cta__inner">
-      <h2>Ready for a site you're proud to share?</h2>
-      <p>Tell us about your business. We'll reply within one business day with next steps and a ballpark price.</p>
+  <section class="closing">
+    <div class="gband" data-gradient-wrap aria-hidden="true"><canvas data-gradient></canvas></div>
+    <div class="wrap">
+      <h2>Tell us what you're working with.</h2>
+      <p>Send us your current site, or just the idea. We'll reply within one business day with what we'd change and a rough price.</p>
       <div class="hero__actions">
-        <a class="btn" href="contact.html">Start a project <span class="arrow">→</span></a>
-        <a class="btn btn--light" href="pricing.html">See pricing</a>
+        <a class="btn" href="contact.html">Start a project<span class="harrow" aria-hidden="true"><svg viewBox="0 0 10 10"><path class="harrow__line" d="M0 5h7"/><path class="harrow__tip" d="M1 1l4 4-4 4"/></svg></span></a>
+        <a class="link" href="contact.html">hello@revampweb.com</a>
       </div>
     </div>
   </section>
@@ -238,17 +217,18 @@
   <div class="wrap">
     <div class="footer__grid">
       <div>
-        <a class="brand" href="index.html"><img src="../assets/brand/rw-logo.svg" alt="" width="34" height="37">Revamp Web</a>
-        <p>Websites designed, built and hosted by one small team.</p>
+        <a class="brand" href="index.html"><img src="../assets/brand/rw-logo.svg" alt="" width="30" height="33">Revamp Web</a>
+        <p>Websites designed, built and hosted by Rob and Dave.</p>
       </div>
-      <div><h4>Site</h4><ul><li><a href="work.html">Work</a></li><li><a href="pricing.html">Pricing</a></li><li><a href="contact.html">Contact</a></li></ul></div>
-      <div><h4>Services</h4><ul><li><a href="pricing.html#build">Website builds</a></li><li><a href="pricing.html#care">Hosting &amp; care</a></li><li><a href="pricing.html#main-street">Main Street Program</a></li></ul></div>
-      <div><h4>Say hi</h4><ul><li><a href="contact.html">hello@revampweb.com</a></li><li><a href="contact.html">Book a call</a></li></ul></div>
+      <div><h4>Studio</h4><ul><li><a href="work.html">Work</a></li><li><a href="pricing.html">Pricing</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+      <div><h4>Services</h4><ul><li><a href="pricing.html#build">Website builds</a></li><li><a href="pricing.html#care">Hosting and care</a></li><li><a href="pricing.html#main-street">Main Street Program</a></li></ul></div>
+      <div><h4>Get in touch</h4><ul><li><a href="contact.html">hello@revampweb.com</a></li><li><a href="contact.html">Book a 30-minute call</a></li></ul></div>
     </div>
-    <div class="footer__base"><span>© <span data-year>2026</span> Revamp Web</span><span>Designed and hosted in-house</span></div>
+    <div class="footer__base"><span>© <span data-year>2026</span> Revamp Web</span><span>Built by hand, hosted in-house</span></div>
   </div>
 </footer>
 
+<script src="../assets/js/gradient.js"></script>
 <script src="../assets/js/site.js"></script>
 </body>
 </html>
