@@ -50,5 +50,5 @@ node business-cards/export.js
 
 - Domain `revampweb.com` and the email addresses
 - Phone numbers and Dave's last name on the cards
-- Work thumbnails are drawn stand-ins. Swap in real screenshots and add the juice company's name.
+- Work page screenshots in `assets/work/` were captured from the live sites (Top Dawgs and Pick5 come from their repo READMEs). Re-capture them when the sites change.
 - The contact form isn't wired to a backend yet (`assets/js/site.js`).
