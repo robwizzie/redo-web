@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Contact · Revamp Web</title>
+<meta name="description" content="Revamp Web designs, builds and hosts modern websites for growing businesses. One small team, start to finish.">
+<link rel="icon" href="../assets/brand/rw-logo.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600&family=Schibsted+Grotesk:wght@600;700;800&display=swap">
+<link rel="stylesheet" href="../assets/css/site.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap nav">
+    <a class="brand" href="index.html"><img src="../assets/brand/rw-logo.svg" alt="" width="34" height="37">Revamp Web</a>
+    <nav class="nav-links" aria-label="Main">
+      <a href="index.html">Home</a>
+      <a href="work.html">Work</a>
+      <a href="pricing.html">Pricing</a>
+      <a href="contact.html" aria-current="page">Contact</a>
+    </nav>
+    <div class="nav-cta">
+      <a class="btn btn--ghost" href="pricing.html">See pricing</a>
+      <a class="btn" href="contact.html">Start a project <span class="arrow">→</span></a>
+    </div>
+    <button class="menu-btn" aria-label="Open menu" aria-expanded="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+  </div>
+</header>
+
+<main>
+  <section class="page-head">
+    <div class="band band--short" aria-hidden="true"><canvas class="band__canvas"></canvas></div>
+    <div class="wrap">
+      <span class="eyebrow">Contact</span>
+      <h1>Let's talk about your site.</h1>
+      <p class="lede">Tell us a little about your business. We'll reply within one business day with next steps and a ballpark price.</p>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:24px">
+    <div class="wrap contact">
+      <aside class="contact__aside">
+        <h2>Prefer to reach out directly?</h2>
+        <ul class="contact__list">
+          <li><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 6l-10 7L2 6"/></svg></span><div><b>Email</b><span class="copyline"><span>hello@revampweb.com</span><button type="button" data-copy="hello@revampweb.com">Copy</button></span></div></li>
+          <li><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg></span><div><b>Book a 30-minute call</b><span>Free, no obligation. We'll talk through what you need and what it might cost.</span></div></li>
+          <li><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></span><div><b>Response time</b><span>Within one business day, usually sooner.</span></div></li>
+        </ul>
+        <p>Small business with a tight budget? Pick <b>“Small business: let's talk”</b> in the budget field. We'll work with whatever you have.</p>
+      </aside>
+
+      <div>
+        <form class="form" id="contact-form" novalidate>
+          <div class="form__row">
+            <div class="field"><label for="name">Your name</label><input id="name" name="name" autocomplete="name" required placeholder="Jordan Lee"></div>
+            <div class="field"><label for="email">Email</label><input id="email" name="email" type="email" autocomplete="email" required placeholder="jordan@business.com"></div>
+          </div>
+          <div class="form__row">
+            <div class="field"><label for="business">Business name</label><input id="business" name="business" autocomplete="organization" placeholder="Rosie's Bakery"></div>
+            <div class="field"><label for="current">Current website <span class="hint">(if any)</span></label><input id="current" name="current" inputmode="url" placeholder="rosiesbakery.com"></div>
+          </div>
+          <fieldset class="field">
+            <legend>What do you need?</legend>
+            <div class="chips">
+              <input type="checkbox" id="need-new" name="need" value="new"><label for="need-new">New website</label>
+              <input type="checkbox" id="need-redesign" name="need" value="redesign"><label for="need-redesign">Redesign</label>
+              <input type="checkbox" id="need-store" name="need" value="store"><label for="need-store">Online store</label>
+              <input type="checkbox" id="need-booking" name="need" value="booking"><label for="need-booking">Bookings</label>
+              <input type="checkbox" id="need-hosting" name="need" value="hosting"><label for="need-hosting">Hosting only</label>
+              <input type="checkbox" id="need-unsure" name="need" value="unsure"><label for="need-unsure">Not sure yet</label>
+            </div>
+          </fieldset>
+          <div class="form__row">
+            <div class="field">
+              <label for="budget">Budget</label>
+              <select id="budget" name="budget">
+                <option value="">Choose a range</option>
+                <option value="small-business">Small business: let's talk</option>
+                <option value="1-3k">$1,500 – $3,000</option>
+                <option value="3-6k">$3,000 – $6,000</option>
+                <option value="6-10k">$6,000 – $10,000</option>
+                <option value="10k+">$10,000+</option>
+                <option value="unsure">Not sure yet</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="timeline">Timeline</label>
+              <select id="timeline" name="timeline">
+                <option value="">Choose one</option>
+                <option>As soon as possible</option>
+                <option>In the next 1–2 months</option>
+                <option>In 3+ months</option>
+                <option>Just exploring</option>
+              </select>
+            </div>
+          </div>
+          <p class="budget-note">Good call. Through our Main Street Program we scope the project to what you can spend and can split payments over several months. Tell us a rough number below if you have one.</p>
+          <div class="field"><label for="message">Tell us about your project</label><textarea id="message" name="message" placeholder="What does your business do, and what should the new site help with?"></textarea></div>
+          <div class="form__foot">
+            <small>We never share your details.</small>
+            <button class="btn btn--brand" type="submit">Send message <span class="arrow">→</span></button>
+          </div>
+        </form>
+        <div class="form form-done" hidden>
+          <div class="check"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></div>
+          <h3>Thanks, <span data-name>there</span>.</h3>
+          <p>We'll get back to you within one business day.</p>
+          <span class="proto-note">Prototype: this form isn't connected to a backend yet.</span>
+        </div>
+      </div>
+    </div>
+  </section>
+  <script>
+    // Preselect budget from ?budget=small-business links
+    (() => { const p = new URLSearchParams(location.search).get("budget"); const s = document.getElementById("budget"); if (p && s.querySelector(`option[value="${p}"]`)) s.value = p; })();
+  </script>
+</main>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer__grid">
+      <div>
+        <a class="brand" href="index.html"><img src="../assets/brand/rw-logo.svg" alt="" width="34" height="37">Revamp Web</a>
+        <p>Websites designed, built and hosted by one small team.</p>
+      </div>
+      <div><h4>Site</h4><ul><li><a href="work.html">Work</a></li><li><a href="pricing.html">Pricing</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+      <div><h4>Services</h4><ul><li><a href="pricing.html#build">Website builds</a></li><li><a href="pricing.html#care">Hosting &amp; care</a></li><li><a href="pricing.html#main-street">Main Street Program</a></li></ul></div>
+      <div><h4>Say hi</h4><ul><li><a href="contact.html">hello@revampweb.com</a></li><li><a href="contact.html">Book a call</a></li></ul></div>
+    </div>
+    <div class="footer__base"><span>© <span data-year>2026</span> Revamp Web</span><span>Designed and hosted in-house</span></div>
+  </div>
+</footer>
+
+<script src="../assets/js/site.js"></script>
+</body>
+</html>

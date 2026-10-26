@@ -1,0 +1,225 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Revamp Web · Midnight</title>
+<link rel="icon" href="../assets/brand/rw-logo.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=JetBrains+Mono:wght@500&display=swap">
+<style>
+/* Direction B "Midnight": the logo's black as the canvas, its blue as light.
+   Layout: full-bleed dark sections, oversized expanded type, one glowing 3D mark. */
+:root {
+  --void: #030407;
+  --panel: #0B0E16;
+  --line: #1B2131;
+  --text: #EEF2FA;
+  --dim: #8A94AB;
+  --blue: #5E94F7;
+  --glow: rgba(94, 148, 247, .55);
+  --display: "Archivo", "Arial Black", sans-serif;
+  --mono: "JetBrains Mono", ui-monospace, Menlo, monospace;
+  color-scheme: dark;
+}
+*, *::before, *::after { box-sizing: border-box; }
+[hidden] { display: none !important; }
+body { margin: 0; background: var(--void); color: var(--text); font-family: var(--display); font-stretch: 100%; line-height: 1.55; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+a { color: inherit; text-decoration: none; }
+:focus-visible { outline: 2px solid var(--blue); outline-offset: 4px; }
+h1, h2, h3 { margin: 0; font-stretch: 125%; font-weight: 800; letter-spacing: -0.02em; line-height: .95; text-wrap: balance; text-transform: uppercase; }
+p { margin: 0; }
+.wrap { max-width: 1240px; margin-inline: auto; padding-left: max(24px, env(safe-area-inset-left, 0px)); padding-right: max(24px, env(safe-area-inset-right, 0px)); }
+@media (max-width: 480px) { .wrap { padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); } }
+.mono { font-family: var(--mono); font-size: .76rem; letter-spacing: .1em; text-transform: uppercase; color: var(--dim); }
+.btn { display: inline-flex; align-items: center; gap: 10px; padding: 14px 22px; border-radius: 4px; font-weight: 700; font-stretch: 112%; text-transform: uppercase; font-size: .86rem; letter-spacing: .04em; transition: box-shadow .3s, transform .3s; }
+.btn--blue { background: var(--blue); color: #000; box-shadow: 0 0 0 0 var(--glow); }
+.btn--blue:hover { box-shadow: 0 0 40px 4px var(--glow); transform: translateY(-1px); }
+.btn--line { box-shadow: inset 0 0 0 1px #2C3448; }
+.btn--line:hover { box-shadow: inset 0 0 0 1px var(--blue); }
+
+header { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 20; background: rgba(3, 4, 7, .7); backdrop-filter: blur(12px); border-bottom: 1px solid var(--line); }
+body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); background: var(--void); z-index: 30; }
+.nav { display: flex; align-items: center; gap: 32px; height: 68px; }
+.nav .logo { display: flex; align-items: center; gap: 12px; font-weight: 800; font-stretch: 125%; text-transform: uppercase; letter-spacing: .02em; font-size: .95rem; }
+.nav .logo img { width: 30px; }
+.nav nav { display: flex; gap: 26px; margin-left: auto; font-size: .82rem; text-transform: uppercase; letter-spacing: .08em; font-weight: 600; color: var(--dim); }
+.nav nav a:hover { color: var(--text); }
+@media (max-width: 760px) { .nav nav { display: none; } .nav .btn { margin-left: auto; } }
+
+/* Hero */
+.hero { position: relative; overflow: hidden; padding-block: 72px 0; }
+.hero__grid { display: grid; grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr); gap: 24px; align-items: center; position: relative; z-index: 2; }
+.hero h1 { font-size: clamp(2.6rem, 1rem + 5vw, 6rem); position: relative; z-index: 2; }
+.hero h1 em { font-style: normal; color: var(--blue); text-shadow: 0 0 40px var(--glow); }
+.hero__copy { display: grid; gap: 28px; min-width: 0; }
+.hero__copy p { color: var(--dim); font-size: 1.15rem; max-width: 46ch; font-stretch: 100%; }
+.hero__copy p b { color: var(--text); font-weight: 600; }
+.actions { display: flex; gap: 12px; flex-wrap: wrap; }
+
+.mark { position: relative; aspect-ratio: 1; display: grid; place-items: center; perspective: 900px; max-width: 100%; }
+.mark__halo { position: absolute; inset: 12%; border-radius: 50%; background: radial-gradient(circle, rgba(94,148,247,.45), transparent 65%); filter: blur(30px); animation: pulse 5s ease-in-out infinite; }
+.mark img { width: 62%; position: relative; filter: drop-shadow(0 30px 60px rgba(94,148,247,.35)); animation: float 7s ease-in-out infinite; transform-style: preserve-3d; }
+.mark__ring { position: absolute; inset: 4%; border: 1px dashed rgba(94,148,247,.35); border-radius: 50%; animation: spin 40s linear infinite; }
+.mark__ring::before { content: ""; position: absolute; top: -5px; left: 50%; width: 10px; height: 10px; background: var(--blue); border-radius: 50%; box-shadow: 0 0 16px var(--blue); }
+@keyframes float { 0%, 100% { transform: rotateY(-14deg) rotateX(6deg) translateY(0); } 50% { transform: rotateY(14deg) rotateX(-4deg) translateY(-14px); } }
+@keyframes pulse { 50% { opacity: .55; transform: scale(.92); } }
+@keyframes spin { to { transform: rotate(360deg); } }
+@media (max-width: 860px) { .hero__grid { grid-template-columns: minmax(0, 1fr); } .mark { max-width: 360px; margin-inline: auto; } }
+
+.floor { position: relative; height: 220px; margin-top: -40px; perspective: 400px; overflow: hidden; z-index: 1; }
+.floor::before { content: ""; position: absolute; inset: 0 -50%; background-image: linear-gradient(var(--line) 1px, transparent 1px), linear-gradient(90deg, var(--line) 1px, transparent 1px); background-size: 60px 60px; transform: rotateX(62deg); transform-origin: top; animation: floor 3s linear infinite; }
+.floor::after { content: ""; position: absolute; inset: 0; background: linear-gradient(var(--void), transparent 30%, transparent 60%, var(--void)); }
+@keyframes floor { to { background-position: 0 60px; } }
+
+/* Ticker */
+.ticker { border-block: 1px solid var(--line); overflow: hidden; padding-block: 18px; white-space: nowrap; }
+.ticker__track { display: inline-flex; gap: 48px; animation: tick 30s linear infinite; font-weight: 800; font-stretch: 125%; text-transform: uppercase; font-size: 1.4rem; color: #2C3448; }
+.ticker__track span::after { content: "◆"; margin-left: 48px; color: var(--blue); font-size: .8rem; vertical-align: middle; }
+@keyframes tick { to { transform: translateX(-50%); } }
+
+section.block { padding-block: clamp(80px, 10vw, 140px); }
+.head { display: flex; justify-content: space-between; align-items: end; gap: 24px; flex-wrap: wrap; margin-bottom: 56px; }
+.head h2 { font-size: clamp(2.2rem, 1rem + 4vw, 4.6rem); max-width: 14ch; }
+.head p { color: var(--dim); max-width: 40ch; }
+
+/* Services as big rows */
+.rows { border-top: 1px solid var(--line); }
+.row { display: grid; grid-template-columns: 70px minmax(0, 1fr) minmax(0, 1fr) 40px; gap: 24px; align-items: center; padding: 30px 0; border-bottom: 1px solid var(--line); position: relative; isolation: isolate; transition: color .35s; }
+.row::before { content: ""; position: absolute; inset: 0; background: var(--blue); transform: scaleY(0); transform-origin: bottom; transition: transform .45s cubic-bezier(.22,1,.36,1); z-index: -1; }
+.row:hover::before { transform: scaleY(1); }
+.row:hover { color: #000; }
+.row:hover .mono, .row:hover p { color: #000; }
+.row h3 { font-size: clamp(1.6rem, .8rem + 2.6vw, 3rem); }
+.row p { color: var(--dim); transition: color .35s; }
+.row .arr { font-size: 1.6rem; transition: transform .35s; }
+.row:hover .arr { transform: rotate(-45deg); }
+@media (max-width: 760px) { .row { grid-template-columns: 44px minmax(0, 1fr); } .row p { grid-column: 2; } .row .arr { display: none; } }
+
+/* Work */
+.work { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; }
+.w { background: var(--panel); border: 1px solid var(--line); border-radius: 6px; overflow: hidden; display: grid; transition: border-color .3s, transform .4s; }
+.w:hover { border-color: var(--blue); transform: translateY(-4px); }
+.w__img { aspect-ratio: 4 / 3; display: grid; align-content: end; padding: 22px; font-weight: 900; font-stretch: 125%; text-transform: uppercase; font-size: 1.9rem; line-height: .9; max-width: 100%; }
+.w__meta { padding: 18px 22px; display: flex; justify-content: space-between; border-top: 1px solid var(--line); gap: 12px; }
+.w__meta b { font-weight: 700; }
+@media (max-width: 860px) { .work { grid-template-columns: minmax(0, 1fr); } }
+
+/* Pricing */
+.prices { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); border: 1px solid var(--line); border-radius: 6px; overflow: hidden; }
+.price { padding: 36px 30px; display: grid; gap: 16px; align-content: start; border-right: 1px solid var(--line); }
+.price:last-child { border-right: 0; }
+.price--hot { background: linear-gradient(180deg, rgba(94,148,247,.14), transparent 70%); box-shadow: inset 0 2px 0 var(--blue); }
+.price h3 { font-size: 1.3rem; }
+.price .amt { font-weight: 900; font-stretch: 125%; font-size: 3rem; letter-spacing: -0.03em; line-height: 1; }
+.price .amt small { font-size: .9rem; color: var(--dim); font-weight: 500; font-stretch: 100%; letter-spacing: 0; }
+.price ul { margin: 0; padding: 0; list-style: none; display: grid; gap: 8px; color: var(--dim); }
+.price li::before { content: "→ "; color: var(--blue); }
+.care { margin-top: 20px; display: flex; flex-wrap: wrap; gap: 12px 36px; padding: 22px 30px; border: 1px solid var(--line); border-radius: 6px; color: var(--dim); align-items: baseline; }
+.care b { color: var(--text); }
+@media (max-width: 900px) { .prices { grid-template-columns: minmax(0, 1fr); } .price { border-right: 0; border-bottom: 1px solid var(--line); } }
+
+/* Main street */
+.ms { margin-top: 20px; border-radius: 6px; padding: clamp(28px, 5vw, 56px); background: var(--blue); color: #000; display: grid; grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr); gap: 32px; align-items: center; }
+.ms h3 { font-size: clamp(1.8rem, 1rem + 2.4vw, 3rem); }
+.ms p { margin-top: 14px; max-width: 50ch; }
+.ms .btn { background: #000; color: #fff; justify-self: start; }
+@media (max-width: 760px) { .ms { grid-template-columns: minmax(0, 1fr); } }
+
+/* CTA */
+.final { text-align: center; padding-block: clamp(100px, 14vw, 180px); position: relative; overflow: hidden; }
+.final::before { content: ""; position: absolute; left: 50%; top: 50%; width: 900px; height: 900px; max-width: 160vw; transform: translate(-50%, -50%); background: radial-gradient(circle, rgba(94,148,247,.22), transparent 60%); }
+.final h2 { font-size: clamp(2.6rem, 1rem + 6vw, 7rem); position: relative; }
+.final p { color: var(--dim); margin: 24px auto 36px; max-width: 44ch; position: relative; }
+.final .actions { justify-content: center; position: relative; }
+footer { border-top: 1px solid var(--line); padding-block: 28px; color: var(--dim); font-size: .85rem; }
+footer .wrap { display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation: none !important; transition: none !important; } }
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap nav">
+    <a class="logo" href="#"><img src="../assets/brand/rw-logo.svg" alt="">Revamp Web</a>
+    <nav aria-label="Main"><a href="#services">Services</a><a href="#work">Work</a><a href="#pricing">Pricing</a><a href="#contact">Contact</a></nav>
+    <a class="btn btn--blue" href="#contact">Start a project</a>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="wrap hero__grid">
+      <div class="hero__copy">
+        <span class="mono">Design · Build · Host</span>
+        <h1>Old site?<br><em>Revamped.</em></h1>
+        <p>We design, build and host fast, modern websites for businesses that have outgrown theirs. <b>A designer and an engineer, start to finish.</b> One team, one invoice and no hosting accounts for you to manage.</p>
+        <div class="actions"><a class="btn btn--blue" href="#contact">Start a project →</a><a class="btn btn--line" href="#work">See our work</a></div>
+      </div>
+      <div class="mark" aria-hidden="true">
+        <div class="mark__halo"></div>
+        <div class="mark__ring"></div>
+        <img src="../assets/brand/rw-logo.svg" alt="">
+      </div>
+    </div>
+    <div class="floor" aria-hidden="true"></div>
+  </section>
+
+  <div class="ticker" aria-hidden="true">
+    <div class="ticker__track">
+      <span>Custom design</span><span>Hand-built code</span><span>Managed hosting</span><span>SEO setup</span><span>Online stores</span><span>Daily backups</span>
+      <span>Custom design</span><span>Hand-built code</span><span>Managed hosting</span><span>SEO setup</span><span>Online stores</span><span>Daily backups</span>
+    </div>
+  </div>
+
+  <section class="block" id="services">
+    <div class="wrap">
+      <div class="head"><h2>What we do</h2><p>Everything from the first sketch to the server it runs on. Hover a row to see more.</p></div>
+      <div class="rows">
+        <a class="row" href="#contact"><span class="mono">Design</span><h3>Design</h3><p>Custom layouts built around your brand. No templates, no page builders.</p><span class="arr">→</span></a>
+        <a class="row" href="#contact"><span class="mono">Build</span><h3>Develop</h3><p>Hand-written, fast-loading code with menus, booking and stores built in.</p><span class="arr">→</span></a>
+        <a class="row" href="#contact"><span class="mono">Host</span><h3>Host</h3><p>Servers, SSL, backups and uptime monitoring, all run by Dave.</p><span class="arr">→</span></a>
+        <a class="row" href="#contact"><span class="mono">Grow</span><h3>Grow</h3><p>SEO setup, analytics and monthly edits so the site keeps working for you.</p><span class="arr">→</span></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="work" style="padding-top:0">
+    <div class="wrap">
+      <div class="head"><h2>Selected work</h2><p>A short list, built entirely by hand.</p></div>
+      <div class="work">
+        <a class="w" href="../site/work.html#trouble-brewing"><div class="w__img" style="background:radial-gradient(circle at 85% 20%,#C9741A 0 20%,transparent 21%),#1C1410;color:#F2D7A6">Trouble<br>Brewing</div><div class="w__meta"><b>Trouble Brewing</b><span class="mono">Launching soon</span></div></a>
+        <a class="w" href="../site/work.html#juice"><div class="w__img" style="background:radial-gradient(circle at 80% 25%,#FF8A3D 0 16%,transparent 17%),radial-gradient(circle at 64% 38%,#8BD448 0 10%,transparent 11%),#FFF6E8;color:#1F3B1A">Cold-<br>pressed</div><div class="w__meta"><b>Juice company</b><span class="mono">Live</span></div></a>
+        <a class="w" href="../site/work.html#portfolio"><div class="w__img" style="background:linear-gradient(135deg,#0B0F1A,#16213D);color:#E7EEFF">Robert<br>Wiscount<span style="color:var(--blue)">.</span></div><div class="w__meta"><b>Rob's portfolio</b><span class="mono">Live</span></div></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="pricing" style="padding-top:0">
+    <div class="wrap">
+      <div class="head"><h2>Pricing</h2><p>Fixed quotes, 50% to start and 50% at launch. Hosting is optional and month-to-month.</p></div>
+      <div class="prices">
+        <div class="price"><span class="mono">Up to 5 pages</span><h3>Launch</h3><div class="amt">$1,800</div><ul><li>Custom design</li><li>Contact form and basic SEO</li><li>Live in about 3 weeks</li></ul></div>
+        <div class="price price--hot"><span class="mono" style="color:var(--blue)">Most popular · up to 12 pages</span><h3>Growth</h3><div class="amt">$4,200</div><ul><li>Edit content yourself</li><li>Custom animation</li><li>Analytics and reports</li></ul></div>
+        <div class="price"><span class="mono">Stores, booking, apps</span><h3>Custom</h3><div class="amt"><small>from </small>$8,500</div><ul><li>Online ordering</li><li>Integrations</li><li>Migration from your old site</li></ul></div>
+      </div>
+      <div class="care"><span class="mono">Hosting &amp; care</span><span><b>Host</b> $39/mo</span><span><b>Care</b> $99/mo</span><span><b>Partner</b> $249/mo</span></div>
+      <div class="ms">
+        <div><span class="mono" style="color:#000;opacity:.7">Main Street Program</span><h3 style="margin-top:10px">Small business? Name your budget.</h3><p>Local shops, new businesses and nonprofits: tell us what you can spend and we'll build the best site that fits it, with payments split over a few months if that helps.</p></div>
+        <a class="btn" href="#contact">Tell us your budget →</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="final" id="contact">
+    <div class="wrap">
+      <h2>Let's build<br>something<br>good.</h2>
+      <p>Tell us about your business and we'll reply within one business day.</p>
+      <div class="actions"><a class="btn btn--blue" href="../site/contact.html">Start a project →</a><a class="btn btn--line" href="../site/contact.html">hello@revampweb.com</a></div>
+    </div>
+  </section>
+</main>
+<footer><div class="wrap"><span>© 2026 Revamp Web</span><span class="mono">Concept B · Midnight</span></div></footer>
+</body>
+</html>
