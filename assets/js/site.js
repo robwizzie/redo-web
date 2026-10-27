@@ -1,4 +1,4 @@
-/* Revamp Web: shared site behaviour (no dependencies). The gradient lives in gradient.js. */
+/* Redo Websites: shared site behaviour (no dependencies). The gradient lives in gradient.js. */
 (() => {
   /* Opening a page from a link always starts at the top, unless the link
      points at a section (#pricing). Back/forward keeps the old position. */

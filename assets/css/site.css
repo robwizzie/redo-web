@@ -1,4 +1,4 @@
-/* Revamp Web · Signal (dark)
+/* Redo Websites · Signal (dark)
    The logo's black as the page, its blue as light. A Stripe-style WebGL
    gradient sits in skewed bands; everything else is quiet: hairlines,
    faint column guides, medium-weight type, very few boxes. */
@@ -785,3 +785,12 @@ fieldset.field { border: 0; padding: 0; margin: 0; }
 .lightbox img { display: block; max-width: min(1200px, 94vw); max-height: 86vh; width: auto; height: auto; border-radius: 12px; box-shadow: 0 40px 100px rgba(0,0,0,.8); }
 .lightbox p { color: var(--text-2); text-align: center; margin-top: 12px; font-size: .9rem; }
 .lightbox button { position: absolute; top: -14px; right: -14px; width: 40px; height: 40px; border-radius: 50%; border: 0; background: #fff; color: #000; font-size: 1.2rem; cursor: pointer; }
+/* Small phones: keep "Redo Websites" and the header button side by side */
+@media (max-width: 400px) {
+  .nav { gap: 8px; }
+  .brand { font-size: .95rem; gap: 8px; }
+  .brand img { width: 26px; }
+  .site-header .nav-cta .btn { padding: 7px 12px; font-size: .84rem; }
+  .site-header .nav-cta .btn .harrow { display: none; }
+}
+@media (max-width: 340px) { .brand { font-size: 0; gap: 0; } }

@@ -1,6 +1,6 @@
-# Revamp Web
+# Redo Websites
 
-Marketing site concepts, brand assets and business cards for **Revamp Web**, a two-person web studio: Rob on design and front-end, Dave on back-end and hosting.
+Marketing site concepts, brand assets and business cards for **Redo Websites**, a two-person web studio (formerly working name Revamp Web; the repo keeps that name): Rob on design and front-end, Dave on back-end and hosting.
 
 Everything is plain HTML, CSS and JS with no build step. Open `index.html` in a browser to start.
 
@@ -54,7 +54,7 @@ node business-cards/export.js
 
 ## Placeholders to replace
 
-- Domain `revampweb.com` and the email addresses
+- Email inboxes at redowebsites.com (hello@, rob@, dave@) still need setting up
 - Phone numbers on the cards
 - Work page screenshots in `assets/work/` and `assets/work/cases/` were captured from the live sites; the Mile A Day app screens come from that repo's marketing screenshots. Re-capture them when the sites change.
 - The contact form isn't wired to a backend yet (`assets/js/site.js`).

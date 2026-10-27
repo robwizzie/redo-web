@@ -1,4 +1,4 @@
-/* Revamp Web gradient
+/* Redo Websites gradient
    Our own take on the technique behind Stripe's homepage gradient: a dense
    plane mesh whose vertices are lifted by 3D simplex noise, with each vertex
    colored by stacking "wave layers". Each layer's noise is clamped by
