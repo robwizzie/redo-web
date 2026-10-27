@@ -59,6 +59,10 @@ p { margin: 0; }
 .links a:first-child { background: var(--blue); color: #000; }
 .links a:hover { background: rgba(94,148,247,.25); }
 .links a:first-child:hover { background: #7AA8FA; }
+.concept--main { display: grid; grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr); grid-template-rows: none; }
+.concept--main img { height: 100%; border-bottom: 0; border-right: 1px solid var(--line); }
+.concept--main .concept__body { align-content: center; padding: 28px; }
+@media (max-width: 800px) { .concept--main { grid-template-columns: minmax(0, 1fr); } .concept--main img { border-right: 0; border-bottom: 1px solid var(--line); } }
 .concept h3 .pick { font: 500 .7rem var(--mono); color: #000; background: var(--blue); padding: 3px 7px; border-radius: 4px; letter-spacing: .06em; }
 @media (max-width: 900px) { .concepts { grid-template-columns: minmax(0, 1fr); max-width: 560px; } }
 
@@ -101,42 +105,25 @@ footer { color: var(--dim); font-size: .85rem; border-top: 1px solid var(--line)
     <div>
       <span class="label">Concept board for Rob and Dave</span>
       <h1>Revamp Web</h1>
-      <p>The main site is Signal: dark, with a Stripe-style moving gradient in our blues. Midnight and Blueprint are two alternate directions. Below those are four business card designs and a starting price sheet.</p>
+      <p>We're going with Signal: a dark site with our own moving gradient in the logo's blues. Below it are the business cards, the price sheet and what's left before launch.</p>
     </div>
   </header>
 
   <section>
     <div class="sec-head">
       <span class="label">Website</span>
-      <h2>Signal, plus two alternates</h2>
-      <p>Signal is a full working site with home, work, pricing and contact pages. Midnight and Blueprint are one-page concepts with the same content in a different personality.</p>
+      <h2>Signal, locked in</h2>
+      <p>A full working site with home, work, pricing and contact pages.</p>
     </div>
-    <div class="concepts">
-      <article class="concept">
-        <a href="site/index.html"><img src="assets/previews/signal.jpg" alt="Signal concept homepage"></a>
-        <div class="concept__body">
-          <h3>Signal <span class="pick">Main site</span></h3>
-          <p>Dark mode, built the way Stripe builds theirs: a WebGL mesh gradient in angled bands, faint column guides and quiet hairline layouts. The hero has a before-and-after site you can drag.</p>
-          <div class="links"><a href="site/index.html">Home</a><a href="site/work.html">Work</a><a href="site/pricing.html">Pricing</a><a href="site/contact.html">Contact</a></div>
-        </div>
-      </article>
-      <article class="concept">
-        <a href="concepts/midnight.html"><img src="assets/previews/midnight.jpg" alt="Midnight concept homepage"></a>
-        <div class="concept__body">
-          <h3>Midnight <span>Alternate</span></h3>
-          <p>Dark, loud and techy. The logo glows over a moving grid floor, with heavy expanded type and services rows that flood blue on hover. Shows off the most.</p>
-          <div class="links"><a href="concepts/midnight.html">Open concept</a></div>
-        </div>
-      </article>
-      <article class="concept">
-        <a href="concepts/blueprint.html"><img src="assets/previews/blueprint.jpg" alt="Blueprint concept homepage"></a>
-        <div class="concept__body">
-          <h3>Blueprint <span>Alternate</span></h3>
-          <p>A website drawn as a technical drawing. Graph-paper background, a wireframe that draws itself and a "Main Street Approved" stamp. Friendly, smart and different.</p>
-          <div class="links"><a href="concepts/blueprint.html">Open concept</a></div>
-        </div>
-      </article>
-    </div>
+    <article class="concept concept--main">
+      <a href="site/index.html"><img src="assets/previews/signal.jpg" alt="Signal homepage"></a>
+      <div class="concept__body">
+        <h3>Signal <span class="pick">Main site</span></h3>
+        <p>Our own WebGL gradient in an angled ribbon, the RW mark filled with the same live gradient, real screenshots of Rob's work in a carousel, and both of you on the homepage.</p>
+        <div class="links"><a href="site/index.html">Home</a><a href="site/work.html">Work</a><a href="site/pricing.html">Pricing</a><a href="site/contact.html">Contact</a></div>
+      </div>
+    </article>
+    <p style="color:var(--dim);font-size:.92rem;margin-top:14px">The earlier directions are kept for reference: <a href="concepts/midnight.html">Midnight</a> and <a href="concepts/blueprint.html">Blueprint</a>.</p>
   </section>
 
   <section>
@@ -151,7 +138,7 @@ footer { color: var(--dim); font-size: .85rem; border-top: 1px solid var(--line)
         <ul>
           <li>Front and back for both Rob and Dave</li>
           <li>3.5 × 2 in, 0.125 in bleed, 300 dpi PNG exports</li>
-          <li>Hex works with any site direction</li>
+          <li>Signal now matches the dark site. Dave's card says Dave Simmerman.</li>
         </ul>
         <div class="links"><a href="business-cards/index.html">View all cards</a></div>
       </div>
@@ -208,8 +195,10 @@ footer { color: var(--dim); font-size: .85rem; border-top: 1px solid var(--line)
       <div><span class="who">Rob</span><b>Confirm the portfolio</b><p>The Work page now uses real screenshots of Trouble Brewing, Pressed By J&amp;H, Mile A Day, Traveling Tastebuds, Top Dawgs and robwiscount.org. Check that each one is yours to show and the descriptions are right.</p></div>
       <div><span class="who">Dave</span><b>Contact form backend</b><p>The form is front-end only. It needs an endpoint that emails you both and stores leads, plus spam protection.</p></div>
       <div><span class="who">Dave</span><b>Hosting stack</b><p>Pick where client sites live, how deploys work and how backups and uptime checks run. The Care plan prices assume this is mostly automated.</p></div>
-      <div><span class="who">Both</span><b>Card details</b><p>Add Dave's last name and real phone numbers in the card file, then re-run the export script.</p></div>
-      <div><span class="who">Both</span><b>Testimonials</b><p>Ask Trouble Brewing for a quote after launch. A real testimonial will do more for the homepage than anything else.</p></div>
+      <div><span class="who">Both</span><b>Phone numbers</b><p>The cards still use placeholder numbers. Add the real ones in the card file, then re-run the export script.</p></div>
+      <div><span class="who">Rob</span><b>Old Trouble Brewing screenshot</b><p>Save a screenshot of the archived Wix site and we'll put it in the hero slider, next to the new site.</p></div>
+      <div><span class="who">Rob</span><b>Footer art</b><p>The footer has a spot ready for your illustration.</p></div>
+      <div><span class="who">Both</span><b>Testimonials</b><p>Ask Trouble Brewing for a quote now that the site is live. A real testimonial will do more for the homepage than anything else.</p></div>
     </div>
   </section>
 

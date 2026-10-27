@@ -85,5 +85,75 @@
     });
   });
 
+
+  /* Work carousel: native scroll-snap, plus buttons, a counter and mouse drag */
+  document.querySelectorAll(".carousel").forEach((root) => {
+    const track = root.querySelector(".carousel__track");
+    const slides = [...track.children];
+    const prev = root.querySelector("[data-prev]");
+    const next = root.querySelector("[data-next]");
+    const count = root.querySelector(".carousel__count");
+    let active = 0;
+    const setActive = (i) => {
+      active = i;
+      slides.forEach((s, n) => s.classList.toggle("is-active", n === i));
+      if (count) count.textContent = `${i + 1} of ${slides.length}`;
+      if (prev) prev.disabled = i === 0;
+      if (next) next.disabled = i === slides.length - 1;
+    };
+    // the slide whose left edge is nearest the snap line is the active one
+    const nearest = () => {
+      const pad = parseFloat(getComputedStyle(track).scrollPaddingLeft) || 0;
+      const x = track.scrollLeft + pad;
+      let best = 0, dist = Infinity;
+      slides.forEach((s, n) => { const d = Math.abs(s.offsetLeft - x); if (d < dist) { dist = d; best = n; } });
+      return best;
+    };
+    const go = (i) => {
+      i = Math.max(0, Math.min(slides.length - 1, i));
+      const pad = parseFloat(getComputedStyle(track).scrollPaddingLeft) || 0;
+      track.scrollTo({ left: slides[i].offsetLeft - pad, behavior: reduceMotion ? "auto" : "smooth" });
+    };
+    prev?.addEventListener("click", () => go(active - 1));
+    next?.addEventListener("click", () => go(active + 1));
+    let raf;
+    track.addEventListener("scroll", () => { cancelAnimationFrame(raf); raf = requestAnimationFrame(() => setActive(nearest())); }, { passive: true });
+    track.addEventListener("keydown", (e) => {
+      if (e.key === "ArrowRight") { e.preventDefault(); go(active + 1); }
+      if (e.key === "ArrowLeft") { e.preventDefault(); go(active - 1); }
+    });
+
+    // Drag to scroll with a mouse (touch already scrolls natively)
+    let startX = 0, startLeft = 0, moved = false, down = false;
+    track.addEventListener("pointerdown", (e) => {
+      if (e.pointerType !== "mouse" || e.button !== 0) return;
+      down = true; moved = false; startX = e.clientX; startLeft = track.scrollLeft;
+    });
+    window.addEventListener("pointermove", (e) => {
+      if (!down) return;
+      const dx = e.clientX - startX;
+      if (!moved && Math.abs(dx) > 5) { moved = true; track.classList.add("is-dragging"); }
+      if (moved) track.scrollLeft = startLeft - dx;
+    });
+    window.addEventListener("pointerup", () => {
+      if (!down) return;
+      down = false;
+      if (moved) { track.classList.remove("is-dragging"); go(nearest()); }
+    });
+
+    setActive(0);
+    root.classList.add("is-ready");
+  });
+
+  /* Launch tiles: gauges fill when they scroll into view */
+  const gaugeTiles = document.querySelectorAll("[data-gauges]");
+  if (gaugeTiles.length && !reduceMotion && "IntersectionObserver" in window) {
+    gaugeTiles.forEach((t) => t.classList.add("is-pre"));
+    const io = new IntersectionObserver((entries) => entries.forEach((e) => {
+      if (e.isIntersecting) { e.target.classList.remove("is-pre"); io.unobserve(e.target); }
+    }), { threshold: 0.4 });
+    gaugeTiles.forEach((t) => io.observe(t));
+  }
+
   document.querySelectorAll("[data-year]").forEach((el) => (el.textContent = new Date().getFullYear()));
 })();

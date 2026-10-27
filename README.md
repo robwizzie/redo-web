@@ -20,6 +20,12 @@ Everything is plain HTML, CSS and JS with no build step. Open `index.html` in a 
 
 `assets/js/gradient.js` uses the same technique as Stripe's homepage gradient, written from scratch for us. A dense plane mesh is lifted by 3D simplex noise, and each vertex is colored by stacking three noise-driven wave layers over a base color. Colors come from `--gradient-1` to `--gradient-4` in `site.css`. The canvas sits in a `skewY(-12deg)` band, pauses when off-screen and renders one still frame for people who prefer reduced motion. Without WebGL it falls back to a CSS gradient.
 
+## Photos and art
+
+- `assets/team/` holds Rob's and Dave's portraits with the backgrounds removed, so they sit on the brand blue.
+- `assets/brand/rw-logo-gradient.png` and `gradient-still.jpg` are frames of the live gradient, used on the business cards.
+- The footer has a marked spot (`.footer__art`) for Rob's illustration.
+
 ## Brand
 
 - RW Blue `#5E94F7` (sampled from the logo), Mark Black `#000000`, Deep Blue `#2A5FD8` for text links on white, Night `#0E1F45`.
@@ -49,6 +55,6 @@ node business-cards/export.js
 ## Placeholders to replace
 
 - Domain `revampweb.com` and the email addresses
-- Phone numbers and Dave's last name on the cards
+- Phone numbers on the cards
 - Work page screenshots in `assets/work/` were captured from the live sites (Top Dawgs and Pick5 come from their repo READMEs). Re-capture them when the sites change.
 - The contact form isn't wired to a backend yet (`assets/js/site.js`).

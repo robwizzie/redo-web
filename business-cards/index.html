@@ -62,22 +62,19 @@ body.export .card { --bleed: 0.125in; width: 3.75in; aspect-ratio: auto; height:
 .c-lines { display: grid; gap: 1.2cqw; font-family: "JetBrains Mono", monospace; }
 
 /* ---------- 1. Signal ---------- */
-.signal-front { background: #fff; color: var(--ink); }
-.signal-front .band { position: absolute; top: var(--b); right: var(--b); width: calc(48cqw + var(--bleed)); height: calc(100% + 2 * var(--bleed)); background:
-  radial-gradient(circle at 80% 15%, #7CD6FF 0, transparent 45%),
-  radial-gradient(circle at 30% 80%, #2A5FD8 0, transparent 55%),
-  linear-gradient(135deg, #A8C8FF, #5E94F7 55%, #0E1F45);
-  clip-path: polygon(42% 0, 100% 0, 100% 100%, 0 100%); }
-.signal-front .logo { position: absolute; left: 7cqw; top: 8cqw; width: 11cqw; }
+.signal-front { background: #05070D; color: #E8EDF7; }
+.signal-front .band { position: absolute; top: var(--b); right: var(--b); bottom: var(--b); width: calc(46cqw + var(--bleed)); background: url("../assets/brand/gradient-still.jpg") center / cover; clip-path: polygon(34% 0, 100% 0, 100% 100%, 0 100%); }
+.signal-front .edge { position: absolute; top: var(--b); bottom: var(--b); left: 52.4cqw; width: 15.64cqw; clip-path: polygon(calc(100% - 1.5px) 0, 100% 0, 1.5px 100%, 0 100%); background: rgba(255,255,255,.75); }
+.signal-front .logo { position: absolute; left: 7cqw; top: 8cqw; width: 10cqw; }
 .signal-front .who { position: absolute; left: 7cqw; bottom: 8cqw; display: grid; gap: 1.8cqw; }
-.signal-front .c-name { font-family: "Schibsted Grotesk", sans-serif; font-size: 6.4cqw; font-weight: 800; }
-.signal-front .c-role { font-size: 2.2cqw; color: var(--blue-deep); }
-.signal-front .c-lines { font-size: 2.5cqw; color: #3A4459; margin-top: 2.4cqw; }
-.signal-back { background: linear-gradient(135deg, #A8C8FF, #5E94F7 50%, #2A5FD8 80%, #0E1F45); color: var(--ink); }
-.signal-back .inner { position: absolute; inset: 0; display: grid; place-items: center; align-content: center; gap: 4cqw; }
-.signal-back img { width: 20cqw; filter: drop-shadow(0 2cqw 4cqw rgba(14,31,69,.35)); }
-.signal-back .word { font: 800 6cqw "Schibsted Grotesk", sans-serif; letter-spacing: -0.03em; }
-.signal-back .url { position: absolute; bottom: 6cqw; left: 0; right: 0; text-align: center; font: 500 2.4cqw "JetBrains Mono", monospace; letter-spacing: .12em; text-transform: uppercase; }
+.signal-front .c-name { font-family: "Schibsted Grotesk", sans-serif; font-size: 6.2cqw; font-weight: 600; letter-spacing: -0.035em; }
+.signal-front .c-role { font-size: 2.1cqw; color: #8DB4FF; }
+.signal-front .c-lines { font-size: 2.4cqw; color: #A7B1C6; margin-top: 2.4cqw; }
+.signal-back { background: radial-gradient(70% 90% at 50% 45%, rgba(47,107,255,.35), rgba(47,107,255,0) 70%), #05070D; color: #E8EDF7; }
+.signal-back .inner { position: absolute; inset: 0; display: grid; place-items: center; align-content: center; gap: 3.5cqw; }
+.signal-back img { width: 21cqw; }
+.signal-back .word { font: 600 5.6cqw "Schibsted Grotesk", sans-serif; letter-spacing: -0.035em; }
+.signal-back .url { position: absolute; bottom: 6cqw; left: 0; right: 0; text-align: center; font: 500 2.2cqw "JetBrains Mono", monospace; letter-spacing: .12em; text-transform: uppercase; color: #8DB4FF; }
 
 /* ---------- 2. Midnight ---------- */
 .mid-front { background: var(--night); color: #EEF2FA; }
@@ -139,18 +136,18 @@ body.export .card { --bleed: 0.125in; width: 3.75in; aspect-ratio: auto; height:
 
   <!-- 1 -->
   <section class="option" data-option="signal">
-    <div><span class="tag">Option 1 · matches Signal</span><h2>Signal</h2><p>Clean white front with the animated-site gradient frozen on the edge. The back is all gradient with the mark. The closest to a Stripe feel.</p></div>
+    <div><span class="tag">Option 1 · matches Signal</span><h2>Signal</h2><p>Matches the website: black, with a frame of our live gradient on the edge. The back has the RW mark filled with the same gradient.</p></div>
     <div class="pair">
       <div class="side"><small>Front</small>
         <div class="card signal-front" data-export="signal-front"><div class="trim">
-          <div class="band"></div>
+          <div class="band"></div><div class="edge"></div>
           <img class="logo" src="../assets/brand/rw-logo.svg" alt="">
           <div class="who"><div class="c-name" data-f="name"></div><div class="c-role" data-f="role"></div>
             <div class="c-lines"><span data-f="email"></span><span data-f="phone"></span><span data-f="web"></span></div></div>
         </div></div>
       </div>
       <div class="side"><small>Back</small>
-        <div class="card signal-back" data-export="signal-back"><div class="trim"><div class="inner"><img src="../assets/brand/rw-logo.svg" alt=""><div class="word">Revamp Web</div></div><div class="url" data-f="web"></div></div></div>
+        <div class="card signal-back" data-export="signal-back"><div class="trim"><div class="inner"><img src="../assets/brand/rw-logo-gradient.png" alt=""><div class="word">Revamp Web</div></div><div class="url" data-f="web"></div></div></div>
       </div>
     </div>
   </section>
@@ -222,15 +219,15 @@ body.export .card { --bleed: 0.125in; width: 3.75in; aspect-ratio: auto; height:
     <b>Print specs</b>
     <span>Trim 3.5 × 2 in · bleed 0.125 in on every side (3.75 × 2.25 in file) · 300 dpi · keep text 0.125 in inside the trim.</span>
     <span>Exports: <code>exports/&lt;option&gt;-&lt;front|back&gt;-&lt;rob|dave&gt;.png</code> (1125 × 675 px). Upload these to Vistaprint, MOO or a local printer as-is.</span>
-    <span>Phone numbers, Dave's last name and the domain are placeholders. Edit the <code>PEOPLE</code> list at the bottom of this file and run <code>node business-cards/export.js</code> to regenerate.</span>
+    <span>Phone numbers and the domain are placeholders. Edit the <code>PEOPLE</code> list at the bottom of this file and run <code>node business-cards/export.js</code> to regenerate.</span>
   </div>
 </div>
 
 <script>
-// Edit details here. Phone numbers, Dave's last name and the domain are placeholders.
+// Edit details here. Phone numbers and the domain are placeholders.
 const PEOPLE = {
   rob:  { name: "Rob Wiscount", role: "Co-founder · Design & Front-end", email: "rob@revampweb.com",  phone: "(555) 555-0142", web: "revampweb.com" },
-  dave: { name: "Dave",         role: "Co-founder · Back-end & Hosting", email: "dave@revampweb.com", phone: "(555) 555-0187", web: "revampweb.com" },
+  dave: { name: "Dave Simmerman", role: "Co-founder · Back-end & Hosting", email: "dave@revampweb.com", phone: "(555) 555-0187", web: "revampweb.com" },
 };
 const params = new URLSearchParams(location.search);
 if (params.has("export")) document.body.classList.add("export");

@@ -12,7 +12,7 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600&family=JetBrains+Mono:wght@500&family=Schibsted+Grotesk:wght@500;600;700;800&display=swap">
 <link rel="stylesheet" href="../assets/css/site.css">
 </head>
-<body>
+<body id="top">
 
 <header class="site-header">
   <div class="wrap nav">
@@ -33,7 +33,7 @@
 <main>
   <div class="guides" aria-hidden="true"><div class="wrap"><span></span><span></span><span></span><span></span></div></div>
   <section class="hero">
-    <div class="gband" data-gradient-wrap aria-hidden="true"><canvas data-gradient></canvas></div>
+    <div class="gband" aria-hidden="true"><div class="gband__fill" data-gradient-wrap><canvas data-gradient></canvas></div></div>
     <div class="wrap hero__grid">
       <div class="hero__copy">
         <h1>Your website, revamped.</h1>
@@ -90,21 +90,39 @@
     </div>
   </section>
 
-  <section class="section">
-    <div class="wrap letter">
-      <div class="reveal">
-        <p class="kicker">Who you'd be working with</p>
-        <h2 style="margin-top:14px">Two people, start to finish.</h2>
+  <section class="section" id="team">
+    <div class="wrap">
+      <div class="team-head reveal">
+        <div>
+          <p class="kicker">Who you'll work with</p>
+          <h2 style="margin-top:14px">Meet the two people building your site.</h2>
+        </div>
+        <p>No account managers and nothing outsourced. Rob designs and builds everything your customers see, and Dave runs everything underneath it. You talk to us directly from the first call to launch day, and after.</p>
       </div>
-      <div class="reveal">
-        <div class="letter__body">
-          <p>Most small businesses end up juggling a designer, a developer, a hosting company and a domain registrar, and none of them talk to each other. We started Revamp Web so all of that is one conversation.</p>
-          <p>Nothing gets handed off to someone you've never met. The two people on your first call are the two people who build your site, put it online and answer when you need a change.</p>
-        </div>
-        <div class="owners" style="margin-top:36px">
-          <div class="owner"><span class="owner__mono">RW</span><div><h3>Rob Wiscount</h3><small>Design and front-end</small><p>Layout, type, color, motion and the code that runs in your customer's browser.</p></div></div>
-          <div class="owner"><span class="owner__mono">D</span><div><h3>Dave</h3><small>Back-end and hosting</small><p>Servers, deploys, domains, email, backups and security. The parts you never want to think about.</p></div></div>
-        </div>
+      <div class="people">
+        <article class="person reveal">
+          <div class="person__photo"><img src="../assets/team/rob.webp" alt="Rob Wiscount" width="800" height="860" loading="lazy"></div>
+          <div class="person__body">
+            <span class="person__role">Design and front-end</span>
+            <h3>Rob Wiscount</h3>
+            <p>Rob turns your business into a site people remember. By day he leads development at a South Jersey test-prep company. By night he builds things like this.</p>
+            <ul><li>Layout and type</li><li>Motion</li><li>Front-end code</li><li>SEO basics</li></ul>
+          </div>
+        </article>
+        <article class="person reveal">
+          <div class="person__photo"><img src="../assets/team/dave.webp" alt="Dave Simmerman" width="800" height="860" loading="lazy"></div>
+          <div class="person__body">
+            <span class="person__role">Back-end and hosting</span>
+            <h3>Dave Simmerman</h3>
+            <p>Dave keeps your site fast, secure and online. He handles the parts nobody should have to think about, so you never log in to a hosting dashboard.</p>
+            <ul><li>Servers and deploys</li><li>Domains and email</li><li>Security</li><li>Backups</li></ul>
+          </div>
+        </article>
+      </div>
+      <div class="together reveal">
+        <img src="../assets/work/mad-icon.png" alt="" width="44" height="44">
+        <p><b>We've shipped together before.</b> Rob and Dave built Mile A Day, a free iPhone and Apple Watch app that started as a bet to run a mile every day.</p>
+        <a class="link" href="work.html#mile-a-day">See the project<span class="harrow" aria-hidden="true"><svg viewBox="0 0 10 10"><path class="harrow__line" d="M0 5h7"/><path class="harrow__tip" d="M1 1l4 4-4 4"/></svg></span></a>
       </div>
     </div>
   </section>
@@ -114,19 +132,95 @@
       <div class="intro reveal">
         <p class="kicker">Launch day</p>
         <h2>What's done before we call it finished.</h2>
-        <p>Every build ends with the same checklist, whatever the package. If something on it isn't done, the site isn't live yet.</p>
+        <p>Every site, at every price, goes through the same launch checklist. If anything on it isn't done, the site doesn't go live.</p>
       </div>
-      <ul class="checklist">
-        <li class="reveal"><svg viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="9.5" opacity=".45"/><path d="M6.8 11.3l2.8 2.8 5.6-6"/></svg><div><b>Designed for your business</b><span>Every page laid out from scratch around your brand. No themes.</span></div></li>
-        <li class="reveal"><svg viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="9.5" opacity=".45"/><path d="M6.8 11.3l2.8 2.8 5.6-6"/></svg><div><b>Tested on real phones</b><span>iPhone, Android and a couple of old laptops, not just a resized browser.</span></div></li>
-        <li class="reveal"><svg viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="9.5" opacity=".45"/><path d="M6.8 11.3l2.8 2.8 5.6-6"/></svg><div><b>Domain and SSL connected</b><span>Your address works with and without www, and the padlock shows.</span></div></li>
-        <li class="reveal"><svg viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="9.5" opacity=".45"/><path d="M6.8 11.3l2.8 2.8 5.6-6"/></svg><div><b>Forms that reach you</b><span>Every contact form is tested end to end and copies land in a backup inbox.</span></div></li>
-        <li class="reveal"><svg viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="9.5" opacity=".45"/><path d="M6.8 11.3l2.8 2.8 5.6-6"/></svg><div><b>Google can find you</b><span>Page titles, descriptions and your Google Business Profile all point to the new site.</span></div></li>
-        <li class="reveal"><svg viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="9.5" opacity=".45"/><path d="M6.8 11.3l2.8 2.8 5.6-6"/></svg><div><b>Fast on a slow connection</b><span>We check page speed before launch and aim for a Lighthouse score of 90 or more.</span></div></li>
-        <li class="reveal"><svg viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="9.5" opacity=".45"/><path d="M6.8 11.3l2.8 2.8 5.6-6"/></svg><div><b>Analytics you can read</b><span>A simple dashboard showing visits and where they came from.</span></div></li>
-        <li class="reveal"><svg viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="9.5" opacity=".45"/><path d="M6.8 11.3l2.8 2.8 5.6-6"/></svg><div><b>Backups switched on</b><span>Daily copies of your site, kept for 30 days.</span></div></li>
-        <li class="reveal"><svg viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="9.5" opacity=".45"/><path d="M6.8 11.3l2.8 2.8 5.6-6"/></svg><div><b>A walkthrough with us</b><span>A 30-minute call showing you how to update the things you'll change most.</span></div></li>
-      </ul>
+      <div class="bento">
+        <article class="tile tile--wide reveal" data-gauges>
+          <div class="tile__vis">
+            <div class="gauges">
+              <div class="gauge"><div class="gauge__ring"><svg viewBox="0 0 78 78"><circle class="track" cx="39" cy="39" r="32"/><circle class="val" cx="39" cy="39" r="32"/></svg><b>90+</b></div>Performance</div>
+              <div class="gauge"><div class="gauge__ring"><svg viewBox="0 0 78 78"><circle class="track" cx="39" cy="39" r="32"/><circle class="val" cx="39" cy="39" r="32"/></svg><b>90+</b></div>Accessibility</div>
+              <div class="gauge"><div class="gauge__ring"><svg viewBox="0 0 78 78"><circle class="track" cx="39" cy="39" r="32"/><circle class="val" cx="39" cy="39" r="32"/></svg><b>90+</b></div>Best practices</div>
+              <div class="gauge"><div class="gauge__ring"><svg viewBox="0 0 78 78"><circle class="track" cx="39" cy="39" r="32"/><circle class="val" cx="39" cy="39" r="32"/></svg><b>90+</b></div>SEO</div>
+            </div>
+          </div>
+          <div class="tile__text"><h3>Fast, and checked before launch</h3><p>We run Google's Lighthouse test on every page. Each score has to clear 90 before we flip the switch.</p></div>
+        </article>
+
+        <article class="tile reveal">
+          <div class="tile__vis">
+            <div class="urlbar"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="7" width="10" height="7" rx="1.5"/><path d="M5.5 7V5a2.5 2.5 0 015 0v2"/></svg><div><span>https://</span>yourbusiness.com</div></div>
+            <div class="urlpop"><b>●</b> Connection is secure</div>
+          </div>
+          <div class="tile__text"><h3>Your domain, secured</h3><p>Your address works with or without www, and the padlock shows up.</p></div>
+        </article>
+
+        <article class="tile reveal">
+          <div class="tile__vis">
+            <div class="serp">
+              <div class="serp__site"><i></i>yourbusiness.com</div>
+              <h4>Your Business | Haddon Heights, NJ</h4>
+              <p>Fresh coffee, breakfast all day and a pastry case that empties fast…</p>
+              <span class="serp__chip">Open · Closes 6 PM</span>
+            </div>
+          </div>
+          <div class="tile__text"><h3>Ready for Google</h3><p>Page titles, descriptions and your Business Profile all point to the new site.</p></div>
+        </article>
+
+        <article class="tile reveal">
+          <div class="tile__vis">
+            <div class="toast"><span class="toast__icon"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="2.5" y="4.5" width="15" height="11" rx="2"/><path d="M3 6l7 5 7-5"/></svg></span><div><b>New message from your site</b><span>Jordan: Do you cater events?</span></div><small>now</small></div>
+          </div>
+          <div class="tile__text"><h3>Forms that reach you</h3><p>We test every form end to end, and a copy of each message is kept just in case.</p></div>
+        </article>
+
+        <article class="tile reveal">
+          <div class="tile__vis">
+            <div class="devices">
+              <div class="laptop"><div class="laptop__screen"><div class="mini__nav"></div><div class="mini__body"><i></i><i></i><i></i><em></em></div></div><div class="laptop__base"></div></div>
+              <div class="phone"><div class="mini__nav"></div><div class="mini__body"><i></i><i></i><i></i><em></em></div></div>
+            </div>
+          </div>
+          <div class="tile__text"><h3>Right on every screen</h3><p>Checked on real iPhones, Android phones and laptops, not just a narrow browser window.</p></div>
+        </article>
+
+        <article class="tile reveal">
+          <div class="tile__vis">
+            <div class="backups">
+              <div><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8.5l3 3 7-7"/></svg>Nightly backup<small>Today, 3:00 AM</small></div>
+              <div><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8.5l3 3 7-7"/></svg>Nightly backup<small>Yesterday, 3:00 AM</small></div>
+              <div><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8.5l3 3 7-7"/></svg>Kept for<small>30 days</small></div>
+            </div>
+          </div>
+          <div class="tile__text"><h3>Backed up every night</h3><p>If something ever goes wrong, we can roll your site back to any day in the last month.</p></div>
+        </article>
+
+        <article class="tile reveal">
+          <div class="tile__vis">
+            <div class="chart">
+              <div class="chart__head"><span>Visitors</span><span>This week</span></div>
+              <svg viewBox="0 0 300 96" preserveAspectRatio="none" aria-hidden="true">
+                <defs><linearGradient id="chartFill" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#5E94F7" stop-opacity=".35"/><stop offset="1" stop-color="#5E94F7" stop-opacity="0"/></linearGradient></defs>
+                <path class="area" d="M0 70 L50 62 L100 66 L150 44 L200 50 L250 26 L300 18 L300 96 L0 96 Z"/>
+                <path class="line" d="M0 70 L50 62 L100 66 L150 44 L200 50 L250 26 L300 18"/>
+                <circle class="dot" cx="300" cy="18" r="5"/>
+              </svg>
+              <div class="chart__days"><span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span><span>Sun</span></div>
+            </div>
+          </div>
+          <div class="tile__text"><h3>Analytics you'll actually read</h3><p>One simple dashboard: how many people visited and where they came from.</p></div>
+        </article>
+
+        <article class="tile reveal">
+          <div class="tile__vis">
+            <div class="invite">
+              <div class="invite__date">Launch<b>Day</b></div>
+              <div class="invite__body"><strong>Website walkthrough</strong><span>30 minutes · Video call</span><div class="avatars"><img src="../assets/team/rob.webp" alt=""><img src="../assets/team/dave.webp" alt=""></div></div>
+            </div>
+          </div>
+          <div class="tile__text"><h3>A walkthrough with us</h3><p>We show you how to update the things you'll change most, then hand you the keys.</p></div>
+        </article>
+      </div>
     </div>
   </section>
 
@@ -144,46 +238,110 @@
       </ol>
     </div>
   </section>
-
-  <section class="section">
-    <div class="wrap">
-      <div class="intro reveal" style="margin-bottom:44px">
-        <p class="kicker">Recent work</p>
-        <h2>Sites we've built.</h2>
+  <section class="section" id="work">
+    <div class="carousel">
+      <div class="wrap work-head reveal">
+        <div class="intro" style="margin-bottom:0">
+          <p class="kicker">Recent work</p>
+          <h2>Sites we've built.</h2>
+        </div>
+        <div class="carousel__ctrls">
+          <span class="carousel__count" aria-live="polite"></span>
+          <button class="carousel__btn" type="button" data-prev aria-label="Previous project"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4l-6 6 6 6"/></svg></button>
+          <button class="carousel__btn" type="button" data-next aria-label="Next project"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 4l6 6-6 6"/></svg></button>
+        </div>
       </div>
-      <div class="work">
-        <a class="work-item reveal" href="work.html#trouble-brewing">
-          <div class="work-item__shot"><img src="../assets/work/trouble-brewing.jpg" alt="Trouble Brewing Coffee House homepage with the chalkboard menu" loading="lazy"></div>
-          <div class="work-item__meta"><h3>Trouble Brewing Coffee House</h3><span class="status status--soon">Launching soon</span></div>
-          <p>A coffee shop site in Haddon Heights with a chalkboard menu, an animated fox who answers questions, and an admin panel the owners use to update everything themselves.</p>
-        </a>
-        <a class="work-item reveal" href="work.html#pressed">
-          <div class="work-item__shot"><img src="../assets/work/pressed-by-jh.jpg" alt="Pressed By J and H homepage with a juice bottle" loading="lazy"></div>
-          <div class="work-item__meta"><h3>Pressed By J&amp;H</h3><span class="status">Live</span></div>
-          <p>Cold-pressed juice from South Jersey, with a page for every flavor and Stripe checkout.</p>
-        </a>
-        <a class="work-item reveal" href="work.html#mile-a-day">
-          <div class="work-item__shot"><img src="../assets/work/mile-a-day.jpg" alt="Mile A Day website: One mile. Every day." loading="lazy"></div>
-          <div class="work-item__meta"><h3>Mile A Day</h3><span class="status">Live</span></div>
-          <p>Rob's iPhone and Apple Watch app, plus its website and the server behind it.</p>
-        </a>
+      <div class="carousel__track" tabindex="0" aria-label="Recent work, use arrow keys to browse">
+        <article class="slide">
+          <div class="slide__frame"><div class="slide__bar" aria-hidden="true"><i></i><i></i><i></i><span>troublebrewingcoffeehouse.com</span></div><img class="slide__img" src="../assets/work/trouble-brewing.jpg" alt="Trouble Brewing Coffee House homepage" width="1600" height="1000" draggable="false"></div>
+          <div class="slide__cap"><div><h3>Trouble Brewing Coffee House</h3><p>A Haddon Heights coffee shop. Chalkboard menu, a fox mascot that answers questions, and an admin panel the owners run themselves.</p></div><a class="link" href="https://troublebrewingcoffeehouse.com" target="_blank" rel="noopener">Visit site<span class="harrow" aria-hidden="true"><svg viewBox="0 0 10 10"><path class="harrow__line" d="M0 5h7"/><path class="harrow__tip" d="M1 1l4 4-4 4"/></svg></span></a></div>
+        </article>
+        <article class="slide">
+          <div class="slide__frame"><div class="slide__bar" aria-hidden="true"><i></i><i></i><i></i><span>siponpressed.com</span></div><img class="slide__img" src="../assets/work/pressed-by-jh.jpg" alt="Pressed By J and H homepage" width="1600" height="1000" draggable="false"></div>
+          <div class="slide__cap"><div><h3>Pressed By J&amp;H</h3><p>Cold-pressed juice from South Jersey, with a page for every flavor and Stripe checkout.</p></div><a class="link" href="https://siponpressed.com" target="_blank" rel="noopener">Visit site<span class="harrow" aria-hidden="true"><svg viewBox="0 0 10 10"><path class="harrow__line" d="M0 5h7"/><path class="harrow__tip" d="M1 1l4 4-4 4"/></svg></span></a></div>
+        </article>
+        <article class="slide">
+          <div class="slide__frame"><div class="slide__bar" aria-hidden="true"><i></i><i></i><i></i><span>mileaday.run</span></div><img class="slide__img" src="../assets/work/mile-a-day.jpg" alt="Mile A Day website" width="1600" height="1000" loading="lazy" draggable="false"></div>
+          <div class="slide__cap"><div><h3>Mile A Day</h3><p>Our own iPhone and Apple Watch app, plus its website and the server behind it.</p></div><a class="link" href="https://mileaday.run" target="_blank" rel="noopener">Visit site<span class="harrow" aria-hidden="true"><svg viewBox="0 0 10 10"><path class="harrow__line" d="M0 5h7"/><path class="harrow__tip" d="M1 1l4 4-4 4"/></svg></span></a></div>
+        </article>
+        <article class="slide">
+          <div class="slide__frame"><div class="slide__bar" aria-hidden="true"><i></i><i></i><i></i><span>travelingtastebuds.org</span></div><img class="slide__img" src="../assets/work/traveling-tastebuds.jpg" alt="Traveling Tastebuds homepage" width="1600" height="1000" loading="lazy" draggable="false"></div>
+          <div class="slide__cap"><div><h3>Traveling Tastebuds</h3><p>A NJ and Philly food-review account with 300K followers: TikTok reviews, a food map and merch.</p></div><a class="link" href="https://travelingtastebuds.org" target="_blank" rel="noopener">Visit site<span class="harrow" aria-hidden="true"><svg viewBox="0 0 10 10"><path class="harrow__line" d="M0 5h7"/><path class="harrow__tip" d="M1 1l4 4-4 4"/></svg></span></a></div>
+        </article>
+        <article class="slide">
+          <div class="slide__frame"><div class="slide__bar" aria-hidden="true"><i></i><i></i><i></i><span>poolmaxxing.com</span></div><img class="slide__img" src="../assets/work/top-dawgs.jpg" alt="Top Dawgs pool team homepage" width="1600" height="1000" loading="lazy" draggable="false"></div>
+          <div class="slide__cap"><div><h3>Top Dawgs</h3><p>A pool team site that turns league results into player cards and live stats on its own.</p></div><a class="link" href="https://poolmaxxing.com" target="_blank" rel="noopener">Visit site<span class="harrow" aria-hidden="true"><svg viewBox="0 0 10 10"><path class="harrow__line" d="M0 5h7"/><path class="harrow__tip" d="M1 1l4 4-4 4"/></svg></span></a></div>
+        </article>
+        <article class="slide">
+          <div class="slide__frame"><div class="slide__bar" aria-hidden="true"><i></i><i></i><i></i><span>robwiscount.org</span></div><img class="slide__img" src="../assets/work/robwiscount.jpg" alt="robwiscount.org homepage" width="1600" height="1000" loading="lazy" draggable="false"></div>
+          <div class="slide__cap"><div><h3>robwiscount.org</h3><p>Rob's personal site and the home of the RW mark. Hand-coded and tested on every change.</p></div><a class="link" href="https://robwiscount.org" target="_blank" rel="noopener">Visit site<span class="harrow" aria-hidden="true"><svg viewBox="0 0 10 10"><path class="harrow__line" d="M0 5h7"/><path class="harrow__tip" d="M1 1l4 4-4 4"/></svg></span></a></div>
+        </article>
       </div>
-      <div class="price-strip__foot" style="margin-top:32px"><span>Also: Traveling Tastebuds, Top Dawgs, robwiscount.org and a few games.</span><a class="link" href="work.html">See all work<span class="harrow" aria-hidden="true"><svg viewBox="0 0 10 10"><path class="harrow__line" d="M0 5h7"/><path class="harrow__tip" d="M1 1l4 4-4 4"/></svg></span></a></div>
+      <div class="wrap"><div class="price-foot"><span>Plus side projects like Giddey, LeBronify and Pick5.</span><a class="link" href="work.html">See all work<span class="harrow" aria-hidden="true"><svg viewBox="0 0 10 10"><path class="harrow__line" d="M0 5h7"/><path class="harrow__tip" d="M1 1l4 4-4 4"/></svg></span></a></div></div>
     </div>
   </section>
 
-  <section class="section">
+  <section class="section" id="pricing">
     <div class="wrap">
       <div class="intro reveal">
         <p class="kicker">Pricing</p>
         <h2>Fixed quotes, written down before we start.</h2>
+        <p>Pay once for the build. Hosting and care are optional and month to month.</p>
       </div>
-      <div class="price-strip reveal">
-        <div><h3>Launch</h3><div class="amt">$1,800</div><p>Up to 5 pages. Live in about 3 weeks.</p></div>
-        <div><h3>Growth</h3><div class="amt">$4,200</div><p>Up to 12 pages you can edit yourself.</p></div>
-        <div><h3>Custom</h3><div class="amt"><small>from</small>$8,500</div><p>Online stores, booking and integrations.</p></div>
+      <div class="tiers reveal">
+        <article class="tier">
+          <div class="tier__top"><h3>Launch</h3></div>
+          <p class="tier__for">For new businesses, or anyone replacing an old site with something clean and fast.</p>
+          <div class="tier__price"><b>$1,800</b><span>one time</span></div>
+          <div class="tier__meta"><span>Up to 5 pages</span><span>About 3 weeks</span></div>
+          <ul>
+            <li><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8.5l3 3 7-7"/></svg><span><b>Custom design</b> for every page</span></li>
+            <li><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8.5l3 3 7-7"/></svg><span>Contact form that emails you</span></li>
+            <li><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8.5l3 3 7-7"/></svg><span>Google Business Profile hooked up</span></li>
+            <li><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8.5l3 3 7-7"/></svg><span>Two rounds of design changes</span></li>
+          </ul>
+          <a class="btn btn--quiet" href="contact.html?plan=launch">Start with Launch<span class="harrow" aria-hidden="true"><svg viewBox="0 0 10 10"><path class="harrow__line" d="M0 5h7"/><path class="harrow__tip" d="M1 1l4 4-4 4"/></svg></span></a>
+        </article>
+        <article class="tier tier--featured">
+          <div class="tier__top"><h3>Growth</h3><span class="tier__tag">Most popular</span></div>
+          <p class="tier__for">For established businesses that want to update the site themselves and grow it over time.</p>
+          <div class="tier__price"><b>$4,200</b><span>one time</span></div>
+          <div class="tier__meta"><span>Up to 12 pages</span><span>5 to 6 weeks</span></div>
+          <ul>
+            <li><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8.5l3 3 7-7"/></svg><span>Everything in Launch</span></li>
+            <li><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8.5l3 3 7-7"/></svg><span><b>Edit it yourself:</b> menus, events, posts and photos</span></li>
+            <li><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8.5l3 3 7-7"/></svg><span>Custom animation and interaction</span></li>
+            <li><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8.5l3 3 7-7"/></svg><span>Analytics with a short monthly report</span></li>
+            <li><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8.5l3 3 7-7"/></svg><span>Three rounds of design changes</span></li>
+          </ul>
+          <a class="btn" href="contact.html?plan=growth">Start with Growth<span class="harrow" aria-hidden="true"><svg viewBox="0 0 10 10"><path class="harrow__line" d="M0 5h7"/><path class="harrow__tip" d="M1 1l4 4-4 4"/></svg></span></a>
+        </article>
+        <article class="tier">
+          <div class="tier__top"><h3>Custom</h3></div>
+          <p class="tier__for">For online stores, booking, memberships, or anything that needs real back-end work.</p>
+          <div class="tier__price"><span>from</span><b>$8,500</b></div>
+          <div class="tier__meta"><span>Any size</span><span>Scoped together</span></div>
+          <ul>
+            <li><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8.5l3 3 7-7"/></svg><span>Everything in Growth</span></li>
+            <li><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8.5l3 3 7-7"/></svg><span><b>Online ordering</b> with Stripe or Square</span></li>
+            <li><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8.5l3 3 7-7"/></svg><span>Bookings, accounts or memberships</span></li>
+            <li><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8.5l3 3 7-7"/></svg><span>Connects to your POS, CRM or email tool</span></li>
+            <li><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8.5l3 3 7-7"/></svg><span>We move everything over from your old site</span></li>
+          </ul>
+          <a class="btn btn--quiet" href="contact.html?plan=custom">Get a quote<span class="harrow" aria-hidden="true"><svg viewBox="0 0 10 10"><path class="harrow__line" d="M0 5h7"/><path class="harrow__tip" d="M1 1l4 4-4 4"/></svg></span></a>
+        </article>
       </div>
-      <div class="price-strip__foot"><span>Hosting and care plans run from $39 to $249 a month.</span><a class="link" href="pricing.html">Compare plans<span class="harrow" aria-hidden="true"><svg viewBox="0 0 10 10"><path class="harrow__line" d="M0 5h7"/><path class="harrow__tip" d="M1 1l4 4-4 4"/></svg></span></a></div>
+
+      <div class="included reveal">
+        <div class="included__head"><b>Every site includes</b><span style="color:var(--text-3);font-size:.9rem">No add-on fees for the basics</span></div>
+        <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 013 3L7 19l-4 1 1-4z"/></svg><div><b>Designed from scratch</b><span>No themes or templates. Built around your brand.</span></div></div>
+        <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="2.5" width="12" height="19" rx="2.5"/><path d="M11 18.5h2"/></svg><div><b>Mobile first</b><span>Most of your visitors are on a phone, so we start there.</span></div></div>
+        <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 2.5L4.5 13.5H12l-1 8 8.5-11H12z"/></svg><div><b>Fast load times</b><span>Lighthouse scores of 90 or better before launch.</span></div></div>
+        <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4.5" y="10.5" width="15" height="10" rx="2"/><path d="M8 10.5V7.5a4 4 0 018 0v3"/></svg><div><b>SSL and domain setup</b><span>We connect your domain and keep the padlock on.</span></div></div>
+        <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="M20.5 20.5L16 16"/></svg><div><b>Search basics</b><span>Titles, descriptions, sitemap and your Google profile.</span></div></div>
+        <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="8" cy="15" r="4.5"/><path d="M11.2 11.8L20 3M17 6l2.5 2.5M14.5 8.5L16.5 10.5"/></svg><div><b>You own it</b><span>Your domain, content and code. Leave any time.</span></div></div>
+      </div>
+
 
       <div class="mainstreet reveal" style="margin-top:72px" id="main-street">
         <div>
@@ -202,31 +360,38 @@
   </section>
 
   <section class="closing">
-    <div class="gband" data-gradient-wrap aria-hidden="true"><canvas data-gradient></canvas></div>
-    <div class="wrap">
-      <h2>Tell us what you're working with.</h2>
-      <p>Send us your current site, or just the idea. We'll reply within one business day with what we'd change and a rough price.</p>
-      <div class="hero__actions">
-        <a class="btn" href="contact.html">Start a project<span class="harrow" aria-hidden="true"><svg viewBox="0 0 10 10"><path class="harrow__line" d="M0 5h7"/><path class="harrow__tip" d="M1 1l4 4-4 4"/></svg></span></a>
-        <a class="link" href="contact.html">hello@revampweb.com</a>
+    <div class="wrap closing__grid">
+      <div>
+        <h2>Tell us what you're working with.</h2>
+        <p>Send us your current site, or just the idea. We'll reply within one business day with what we'd change and a rough price.</p>
+        <div class="hero__actions">
+          <a class="btn" href="contact.html">Start a project<span class="harrow" aria-hidden="true"><svg viewBox="0 0 10 10"><path class="harrow__line" d="M0 5h7"/><path class="harrow__tip" d="M1 1l4 4-4 4"/></svg></span></a>
+          <a class="link" href="contact.html">hello@revampweb.com</a>
+        </div>
+      </div>
+      <div class="mark" aria-hidden="true">
+        <img src="../assets/brand/rw-logo.svg" alt="">
+        <div class="mark__live" data-gradient-wrap><canvas data-gradient></canvas></div>
       </div>
     </div>
   </section>
+
 </main>
 
 <footer class="footer">
-  <div class="wrap">
-    <div class="footer__grid">
-      <div>
-        <a class="brand" href="index.html"><img src="../assets/brand/rw-logo.svg" alt="" width="30" height="33">Revamp Web</a>
-        <p>Websites designed, built and hosted by Rob and Dave.</p>
-      </div>
-      <div><h4>Studio</h4><ul><li><a href="work.html">Work</a></li><li><a href="pricing.html">Pricing</a></li><li><a href="contact.html">Contact</a></li></ul></div>
-      <div><h4>Services</h4><ul><li><a href="pricing.html#build">Website builds</a></li><li><a href="pricing.html#care">Hosting and care</a></li><li><a href="pricing.html#main-street">Main Street Program</a></li></ul></div>
-      <div><h4>Get in touch</h4><ul><li><a href="contact.html">hello@revampweb.com</a></li><li><a href="contact.html">Book a 30-minute call</a></li></ul></div>
+  <div class="wrap footer__top">
+    <div class="footer__brand">
+      <a class="brand" href="index.html"><img src="../assets/brand/rw-logo.svg" alt="" width="30" height="33">Revamp Web</a>
+      <p>Websites designed, built and hosted by Rob Wiscount and Dave Simmerman in South Jersey.</p>
+      <div class="footer__people"><span class="avatars"><img src="../assets/team/rob.webp" alt=""><img src="../assets/team/dave.webp" alt=""></span>Two people, start to finish</div>
     </div>
-    <div class="footer__base"><span>© <span data-year>2026</span> Revamp Web</span><span>Built by hand, hosted in-house</span></div>
+    <div><h4>Studio</h4><ul><li><a href="work.html">Work</a></li><li><a href="pricing.html">Pricing</a></li><li><a href="index.html#team">About us</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+    <div><h4>Services</h4><ul><li><a href="pricing.html#build">Website builds</a></li><li><a href="pricing.html#care">Hosting and care</a></li><li><a href="pricing.html#main-street">Main Street Program</a></li></ul></div>
+    <div><h4>Get in touch</h4><ul><li><a href="contact.html">hello@revampweb.com</a></li><li><a href="contact.html">Book a 30-minute call</a></li><li><a href="https://mileaday.run" target="_blank" rel="noopener">Our app, Mile A Day</a></li></ul></div>
   </div>
+  <!-- Footer art: swap .footer__word for Rob's illustration (assets/brand/footer-art.png) when it's ready -->
+  <div class="footer__art" aria-hidden="true"><span class="footer__word">Revamp Web</span></div>
+  <div class="footer__base"><div class="wrap" style="display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px"><span>© <span data-year>2026</span> Revamp Web</span><a href="#top">Back to top</a></div></div>
 </footer>
 
 <script src="../assets/js/gradient.js"></script>
