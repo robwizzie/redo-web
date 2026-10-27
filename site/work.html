@@ -35,109 +35,115 @@
   <section class="page-head">
     <div class="gband" aria-hidden="true"><div class="gband__fill" data-gradient-wrap><canvas data-gradient></canvas></div></div>
     <div class="wrap">
-      <h1>Things we've designed, built and shipped.</h1>
-      <p>Local businesses, our own app and a few projects we made for fun. Every one was designed and coded by hand.</p>
+      <h1>Work we're proud to put our name on.</h1>
+      <p>Five projects, from a corner coffee shop to an app on the App Store. Every one was designed and coded by hand, and most are hosted by us. Tap any screenshot to see it full size.</p>
     </div>
   </section>
 
-  <section class="section" style="padding-top:24px">
+  <nav class="proj-nav" aria-label="Projects"><div class="wrap"><a href="#trouble-brewing"><img src="../assets/work/cases/tb-hero-sm.webp" alt="">Trouble Brewing Coffee House</a><a href="#pressed"><img src="../assets/work/cases/jh-hero-sm.webp" alt="">Pressed By J&amp;H</a><a href="#mile-a-day"><img src="../assets/work/cases/mad-hero-sm.webp" alt="">Mile A Day</a><a href="#tastebuds"><img src="../assets/work/cases/ttb-hero-sm.webp" alt="">Traveling Tastebuds</a><a href="#portfolio"><img src="../assets/work/cases/folio-hero-sm.webp" alt="">robwiscount.org</a></div></nav>
+
+  <section class="proj" id="trouble-brewing" style="--accent:#E0A43A">
     <div class="wrap">
-      <article class="case reveal" id="trouble-brewing">
-        <div class="case__shot"><img src="../assets/work/trouble-brewing.jpg" alt="Trouble Brewing Coffee House homepage with the chalkboard menu" loading="lazy"></div>
-        <div class="case__body">
-          <span class="status">Live</span>
+      <div class="proj__head reveal">
+        <div>
+          <p class="proj__kind">Coffee shop · Haddon Heights, NJ <span class="proj__live">Live</span></p>
           <h2>Trouble Brewing Coffee House</h2>
-          <p>An independent coffee shop in Haddon Heights, NJ. The site has a chalkboard of today's specials, a live open-now board and a menu synced from their SpotOn point of sale. Their top-hatted fox mascot is animated and answers visitor questions about hours, parking and dog-friendly seating.</p>
-          <p>The owners update the menu, events, hours, reviews and photos themselves from an admin panel, with no Squarespace bill. If the backend ever goes down, the site falls back to built-in content so it never looks broken.</p>
-          <dl><div><dt>Our part</dt><dd>Design, build, CMS</dd></div><div><dt>Built with</dt><dd>React, GSAP, Supabase</dd></div><div><dt>Hosting cost</dt><dd>Just the domain</dd></div></dl>
-          <div class="case__links"><a class="link" href="https://troublebrewingcoffeehouse.com" target="_blank" rel="noopener">troublebrewingcoffeehouse.com<span class="harrow" aria-hidden="true"><svg viewBox="0 0 10 10"><path class="harrow__line" d="M0 5h7"/><path class="harrow__tip" d="M1 1l4 4-4 4"/></svg></span></a></div>
+          <p class="proj__lede">A neighborhood coffee shop with a ton of personality and a website that had none. We gave them a site that feels like walking in the door, and the tools to run it themselves.</p>
+          <div class="proj__links"><a class="link" href="https://troublebrewingcoffeehouse.com" target="_blank" rel="noopener">troublebrewingcoffeehouse.com<span class="harrow" aria-hidden="true"><svg viewBox="0 0 10 10"><path class="harrow__line" d="M0 5h7"/><path class="harrow__tip" d="M1 1l4 4-4 4"/></svg></span></a></div>
         </div>
-      </article>
-
-      <article class="case reveal" id="pressed">
-        <div class="case__shot"><img src="../assets/work/pressed-by-jh.jpg" alt="Pressed By J and H homepage: Embrace the Sip" loading="lazy"></div>
-        <div class="case__body">
-          <span class="status">Live</span>
-          <h2>Pressed By J&amp;H</h2>
-          <p>A cold-pressed juice brand from South Jersey. Every flavor, from Tropical Storm to Midnight Rush, has its own page. Customers can order online through Stripe checkout, and order emails go straight to the owners.</p>
-          <dl><div><dt>Our part</dt><dd>Design, build, checkout</dd></div><div><dt>Built with</dt><dd>HTML, Node, Stripe</dd></div><div><dt>Hosted on</dt><dd>Netlify</dd></div></dl>
-          <div class="case__links"><a class="link" href="https://siponpressed.com" target="_blank" rel="noopener">siponpressed.com<span class="harrow" aria-hidden="true"><svg viewBox="0 0 10 10"><path class="harrow__line" d="M0 5h7"/><path class="harrow__tip" d="M1 1l4 4-4 4"/></svg></span></a></div>
-        </div>
-      </article>
-
-      <article class="case reveal" id="mile-a-day">
-        <div class="case__shot"><img src="../assets/work/mile-a-day.jpg" alt="Mile A Day website: One mile. Every day." loading="lazy"></div>
-        <div class="case__body">
-          <span class="status">Live on the App Store</span>
-          <h2>Mile A Day</h2>
-          <p>It started as a bet between two friends to run a mile every day. The streak hit 368 days and became a free iPhone and Apple Watch app. Miles are detected automatically from Apple Health, and you can race friends, earn medals and keep Flamey, your streak mascot, lit.</p>
-          <p>Rob and Dave co-founded it and built all of it together: the app, the API it runs on and the marketing site at mileaday.run. It's the same team that will build your site.</p>
-          <dl><div><dt>Our part</dt><dd>App, API, website</dd></div><div><dt>Built with</dt><dd>SwiftUI, Node, Next.js</dd></div><div><dt>Platforms</dt><dd>iPhone, Watch, web</dd></div></dl>
-          <div class="case__links"><a class="link" href="https://mileaday.run" target="_blank" rel="noopener">mileaday.run<span class="harrow" aria-hidden="true"><svg viewBox="0 0 10 10"><path class="harrow__line" d="M0 5h7"/><path class="harrow__tip" d="M1 1l4 4-4 4"/></svg></span></a><a class="link" href="https://apps.apple.com/app/mile-a-day/id6744917105" target="_blank" rel="noopener">App Store<span class="harrow" aria-hidden="true"><svg viewBox="0 0 10 10"><path class="harrow__line" d="M0 5h7"/><path class="harrow__tip" d="M1 1l4 4-4 4"/></svg></span></a></div>
-        </div>
-      </article>
-
-      <article class="case reveal" id="tastebuds">
-        <div class="case__shot"><img src="../assets/work/traveling-tastebuds.jpg" alt="Traveling Tastebuds homepage: Eat good, travel often" loading="lazy"></div>
-        <div class="case__body">
-          <span class="status">Live</span>
-          <h2>Traveling Tastebuds</h2>
-          <p>A home on the web for a NJ and Philly food-review account with more than 300K followers. Their TikTok reviews play right on the homepage, every spot they've reviewed is pinned on an interactive food map, and there's a merch shop with partner discounts.</p>
-          <dl><div><dt>Our part</dt><dd>Design, build</dd></div><div><dt>Focus</dt><dd>Video, map, merch</dd></div><div><dt>Status</dt><dd>Live</dd></div></dl>
-          <div class="case__links"><a class="link" href="https://travelingtastebuds.org" target="_blank" rel="noopener">travelingtastebuds.org<span class="harrow" aria-hidden="true"><svg viewBox="0 0 10 10"><path class="harrow__line" d="M0 5h7"/><path class="harrow__tip" d="M1 1l4 4-4 4"/></svg></span></a></div>
-        </div>
-      </article>
-
-      <article class="case reveal" id="top-dawgs">
-        <div class="case__shot"><img src="../assets/work/top-dawgs.jpg" alt="Top Dawgs pool team homepage" loading="lazy"></div>
-        <div class="case__body">
-          <span class="status">Live</span>
-          <h2>Top Dawgs</h2>
-          <p>The site for a South Jersey APA pool team. It pulls match results from the league's system automatically and turns them into player cards with skill levels, hot and cold streaks, career stats and a highlight reel.</p>
-          <dl><div><dt>Our part</dt><dd>Design, build, data</dd></div><div><dt>Built with</dt><dd>Next.js, Supabase</dd></div><div><dt>Updates</dt><dd>Automatic</dd></div></dl>
-          <div class="case__links"><a class="link" href="https://poolmaxxing.com" target="_blank" rel="noopener">poolmaxxing.com<span class="harrow" aria-hidden="true"><svg viewBox="0 0 10 10"><path class="harrow__line" d="M0 5h7"/><path class="harrow__tip" d="M1 1l4 4-4 4"/></svg></span></a></div>
-        </div>
-      </article>
-
-      <article class="case reveal" id="portfolio">
-        <div class="case__shot"><img src="../assets/work/robwiscount.jpg" alt="robwiscount.org homepage" loading="lazy"></div>
-        <div class="case__body">
-          <span class="status">Live</span>
-          <h2>robwiscount.org</h2>
-          <p>Rob's personal site and the home of the RW mark. It's plain HTML, CSS and JavaScript with no framework, and every change is tested automatically on desktop and phone sizes before it goes live. There's a game you can play on it, too.</p>
-          <dl><div><dt>Our part</dt><dd>Everything</dd></div><div><dt>Built with</dt><dd>HTML, CSS, JS</dd></div><div><dt>Tested by</dt><dd>Playwright, Lighthouse</dd></div></dl>
-          <div class="case__links"><a class="link" href="https://robwiscount.org" target="_blank" rel="noopener">robwiscount.org<span class="harrow" aria-hidden="true"><svg viewBox="0 0 10 10"><path class="harrow__line" d="M0 5h7"/><path class="harrow__tip" d="M1 1l4 4-4 4"/></svg></span></a></div>
-        </div>
-      </article>
+        <dl class="glance"><div><dt>Our part</dt><dd>Design, build, content system, hosting</dd></div><div><dt>Built with</dt><dd>React, GSAP animation, Supabase</dd></div><div><dt>Hosting cost</dt><dd>Just the domain</dd></div><div><dt>Status</dt><dd>Live</dd></div></dl>
+      </div>
+      <div class="stage reveal"><div class="stage__browser"><div class="stage__bar" aria-hidden="true"><i></i><i></i><i></i><span>troublebrewingcoffeehouse.com</span></div><img src="../assets/work/cases/tb-hero.webp" alt="troublebrewingcoffeehouse.com homepage" loading="lazy"></div><div class="stage__phone"><img src="../assets/work/cases/tb-phone.webp" alt="" loading="lazy"></div></div>
+      
+      <div class="proj__body">
+        <div class="proj__brief reveal"><h3>The brief</h3><p>Their old site was a Wix page that had fallen out of date. Hours were wrong, the menu was a PDF, and nothing about it felt like the shop.</p><p>Now the menu, specials, hours, events and reviews all live in one place the owners update from their phone, and the site never looks broken. If the backend goes down, it falls back to built-in content.</p></div>
+        <div class="reveal"><h3>What we built</h3><ul class="built"><li><b>Chalkboard specials</b><span>"On the board today" updates in seconds from the admin panel.</span></li><li><b>Live open-now board</b><span>Hours that are always right, with an open or closed badge.</span></li><li><b>Menu synced from SpotOn</b><span>Prices match the register, with Order Now on every page.</span></li><li><b>The Trouble fox</b><span>An animated mascot that answers questions about hours, parking and more.</span></li><li><b>Owner admin panel</b><span>Menu, events, hours, reviews, photos and polls, with no Squarespace bill.</span></li><li><b>Real reviews</b><span>Google reviews and guests' own photos, on a gallery wall.</span></li></ul></div>
+      </div>
+      <div class="gallery"><figure><button type="button" data-full="../assets/work/cases/tb-menu.webp"><img src="../assets/work/cases/tb-menu-sm.webp" alt="The menu, with every drink on the counter" loading="lazy"><figcaption>The menu, with every drink on the counter</figcaption></button></figure><figure><button type="button" data-full="../assets/work/cases/tb-reviews-sm.webp"><img src="../assets/work/cases/tb-reviews-sm.webp" alt="Reviews and guests' photos" loading="lazy"><figcaption>Reviews and guests' photos</figcaption></button></figure><figure><button type="button" data-full="../assets/work/cases/tb-hours-sm.webp"><img src="../assets/work/cases/tb-hours-sm.webp" alt="Hours and order ahead" loading="lazy"><figcaption>Hours and order ahead</figcaption></button></figure><figure><button type="button" data-full="../assets/work/cases/tb-sips-sm.webp"><img src="../assets/work/cases/tb-sips-sm.webp" alt="Signature drinks in gilded frames" loading="lazy"><figcaption>Signature drinks in gilded frames</figcaption></button></figure></div>
     </div>
   </section>
-
-  <section class="section">
+  <section class="proj" id="pressed" style="--accent:#F2A33A">
     <div class="wrap">
-      <div class="intro reveal">
-        <p class="kicker">Made for fun</p>
-        <h2>Side projects</h2>
-        <p>Games and apps we built for friends. They're where we try ideas before they show up in client work.</p>
+      <div class="proj__head reveal">
+        <div>
+          <p class="proj__kind">Cold-pressed juice · South Jersey <span class="proj__live">Live</span></p>
+          <h2>Pressed By J&amp;H</h2>
+          <p class="proj__lede">Two founders, eight flavors and a lot of energy. The site is as loud and fresh as the bottles, and it takes orders on its own.</p>
+          <div class="proj__links"><a class="link" href="https://siponpressed.com" target="_blank" rel="noopener">siponpressed.com<span class="harrow" aria-hidden="true"><svg viewBox="0 0 10 10"><path class="harrow__line" d="M0 5h7"/><path class="harrow__tip" d="M1 1l4 4-4 4"/></svg></span></a></div>
+        </div>
+        <dl class="glance"><div><dt>Our part</dt><dd>Design, build, online ordering</dd></div><div><dt>Built with</dt><dd>HTML, Node, Stripe</dd></div><div><dt>Pages</dt><dd>Home, juices, a page per flavor, athletes, checkout</dd></div><div><dt>Status</dt><dd>Live</dd></div></dl>
       </div>
-      <div class="more">
-        <a class="reveal" href="https://playgiddey.com" target="_blank" rel="noopener">
-          <div class="more__shot"><img src="../assets/work/giddey.jpg" alt="Giddey basketball draft puzzle" loading="lazy"></div>
-          <h3>Giddey <span>playgiddey.com</span></h3>
-          <p>A daily basketball draft puzzle. Draft nine players from 235+ real NBA cards and build chemistry.</p>
-        </a>
-        <a class="reveal" href="https://lebronify.app" target="_blank" rel="noopener">
-          <div class="more__shot"><img src="../assets/work/lebronify.jpg" alt="LeBronify web player" loading="lazy"></div>
-          <h3>LeBronify <span>lebronify.app</span></h3>
-          <p>A Spotify-style player where every song is a LeBron parody. On the web and iPhone.</p>
-        </a>
-        <a class="reveal" href="https://github.com/robwizzie/pick-5" target="_blank" rel="noopener">
-          <div class="more__shot"><img src="../assets/work/pick5.jpg" alt="Pick5 NFL pick'em landing page" loading="lazy"></div>
-          <h3>Pick5 <span>NFL pick'em</span></h3>
-          <p>Five picks a week, scored by the odds, so calling the upset is worth up to 20 points.</p>
-        </a>
+      <div class="stage reveal"><div class="stage__browser"><div class="stage__bar" aria-hidden="true"><i></i><i></i><i></i><span>siponpressed.com</span></div><img src="../assets/work/cases/jh-hero.webp" alt="siponpressed.com homepage" loading="lazy"></div><div class="stage__phone"><img src="../assets/work/cases/jh-phone.webp" alt="" loading="lazy"></div></div>
+      
+      <div class="proj__body">
+        <div class="proj__brief reveal"><h3>The brief</h3><p>They needed a brand site that could also sell. Every bottle got its own page with ingredients and color, and customers can order for pickup or delivery and pay online.</p><p>Order emails go straight to the owners, and they can switch online ordering off when they sell out.</p></div>
+        <div class="reveal"><h3>What we built</h3><ul class="built"><li><b>A page for every flavor</b><span>Tropical Storm to Midnight Rush, each with its own colors and ingredients.</span></li><li><b>Stripe checkout</b><span>A five-step order flow: location, delivery, date, contact and payment.</span></li><li><b>Swipeable juice carousel</b><span>Drag or tap through the lineup on the homepage.</span></li><li><b>Order emails</b><span>New orders land in the owners' inbox with everything they need.</span></li><li><b>Athlete partners</b><span>A page for the athletes who drink and promote the juice.</span></li><li><b>Ordering on/off switch</b><span>Pause online orders when the batch sells out.</span></li></ul></div>
       </div>
+      <div class="gallery gallery--mixed"><figure><button type="button" data-full="../assets/work/cases/jh-juices.webp"><img src="../assets/work/cases/jh-juices-sm.webp" alt="The full lineup" loading="lazy"><figcaption>The full lineup</figcaption></button></figure><figure><button type="button" data-full="../assets/work/cases/jh-flavors-sm.webp"><img src="../assets/work/cases/jh-flavors-sm.webp" alt="Flavor carousel" loading="lazy"><figcaption>Flavor carousel</figcaption></button></figure><figure><button type="button" data-full="../assets/work/cases/jh-vitality-sm.webp"><img src="../assets/work/cases/jh-vitality-sm.webp" alt="Brand storytelling" loading="lazy"><figcaption>Brand storytelling</figcaption></button></figure><figure class="tall"><button type="button" data-full="../assets/work/cases/jh-phone.webp"><img src="../assets/work/cases/jh-phone.webp" alt="On a phone" loading="lazy"><figcaption>On a phone</figcaption></button></figure></div>
     </div>
   </section>
+  <section class="proj" id="mile-a-day" style="--accent:#E8455E">
+    <div class="wrap">
+      <div class="proj__head reveal">
+        <div>
+          <p class="proj__kind">Our own app · iPhone, Apple Watch and web <span class="proj__live">Live</span></p>
+          <h2>Mile A Day</h2>
+          <p class="proj__lede">It started as a bet between Rob and Dave to run a mile every day. Nobody lost. The streak hit 368 days and became a free app with a real community behind it.</p>
+          <div class="proj__links"><a class="link" href="https://mileaday.run" target="_blank" rel="noopener">mileaday.run<span class="harrow" aria-hidden="true"><svg viewBox="0 0 10 10"><path class="harrow__line" d="M0 5h7"/><path class="harrow__tip" d="M1 1l4 4-4 4"/></svg></span></a><a class="link" href="https://apps.apple.com/app/mile-a-day/id6744917105" target="_blank" rel="noopener">App Store<span class="harrow" aria-hidden="true"><svg viewBox="0 0 10 10"><path class="harrow__line" d="M0 5h7"/><path class="harrow__tip" d="M1 1l4 4-4 4"/></svg></span></a></div>
+        </div>
+        <dl class="glance"><div><dt>Our part</dt><dd>Everything: app, API, website, merch store</dd></div><div><dt>Built with</dt><dd>SwiftUI, TypeScript, Postgres, Next.js</dd></div><div><dt>Platforms</dt><dd>iPhone, Apple Watch, widgets, web</dd></div><div><dt>Status</dt><dd>Live on the App Store</dd></div></dl>
+      </div>
+      <div class="stage reveal"><div class="stage__browser"><div class="stage__bar" aria-hidden="true"><i></i><i></i><i></i><span>mileaday.run</span></div><img src="../assets/work/cases/mad-hero.webp" alt="mileaday.run homepage" loading="lazy"></div><div class="stage__phone"><img src="../assets/work/cases/mad-phone.webp" alt="" loading="lazy"></div></div>
+      <div class="reveal" style="margin-top:28px;border-radius:20px;overflow:hidden;border:1px solid var(--line)"><img src="../assets/work/cases/mad-app-row.webp" alt="Five Mile A Day app screens: dashboard, streak, profile, medal and share" loading="lazy" style="display:block;width:100%;height:auto"></div>
+      <div class="proj__body">
+        <div class="proj__brief reveal"><h3>The brief</h3><p>This is the project that proves the two of us can ship something big together. Rob built the app and website, and Dave built the backend it runs on.</p><p>Miles are picked up automatically from Apple Health, friends race each other, and Flamey the streak mascot celebrates every mile.</p></div>
+        <div class="reveal"><h3>What we built</h3><ul class="built"><li><b>Automatic mile detection</b><span>Reads Apple Health and Apple Watch, with no manual logging.</span></li><li><b>Friends and competitions</b><span>Head-to-head races, ghost runs and leaderboards.</span></li><li><b>Medals and Flamey's closet</b><span>Badges unlock outfits and colors for the mascot.</span></li><li><b>Share Studio</b><span>Instagram-ready streak cards and stickers.</span></li><li><b>Widgets</b><span>Home and lock screen widgets keep your streak in view.</span></li><li><b>Live community stats</b><span>The website shows real miles and members as they happen.</span></li></ul></div>
+      </div>
+      <div class="gallery" style="--cols:2"><figure><button type="button" data-full="../assets/work/cases/mad-stats.webp"><img src="../assets/work/cases/mad-stats-sm.webp" alt="Live community stats on the site" loading="lazy"><figcaption>Live community stats on the site</figcaption></button></figure><figure><button type="button" data-full="../assets/work/cases/mad-app-widgets.webp"><img src="../assets/work/cases/mad-app-widgets.webp" alt="Home screen widgets" loading="lazy" style="object-position:center 30%"><figcaption>Home screen widgets</figcaption></button></figure></div>
+    </div>
+  </section>
+  <section class="proj" id="tastebuds" style="--accent:#3D7BF2">
+    <div class="wrap">
+      <div class="proj__head reveal">
+        <div>
+          <p class="proj__kind">Food creator · NJ and Philly <span class="proj__live">Live</span></p>
+          <h2>Traveling Tastebuds</h2>
+          <p class="proj__lede">A food-review account with more than 300K followers needed a home that wasn't just a link in bio, and a way to turn followers into business.</p>
+          <div class="proj__links"><a class="link" href="https://travelingtastebuds.org" target="_blank" rel="noopener">travelingtastebuds.org<span class="harrow" aria-hidden="true"><svg viewBox="0 0 10 10"><path class="harrow__line" d="M0 5h7"/><path class="harrow__tip" d="M1 1l4 4-4 4"/></svg></span></a></div>
+        </div>
+        <dl class="glance"><div><dt>Our part</dt><dd>Design, build</dd></div><div><dt>Built with</dt><dd>HTML, CSS, JavaScript, Node</dd></div><div><dt>Audience</dt><dd>300K+ followers, 150M+ views</dd></div><div><dt>Status</dt><dd>Live</dd></div></dl>
+      </div>
+      <div class="stage reveal"><div class="stage__browser"><div class="stage__bar" aria-hidden="true"><i></i><i></i><i></i><span>travelingtastebuds.org</span></div><img src="../assets/work/cases/ttb-hero.webp" alt="travelingtastebuds.org homepage" loading="lazy"></div><div class="stage__phone"><img src="../assets/work/cases/ttb-phone.webp" alt="" loading="lazy"></div></div>
+      
+      <div class="proj__body">
+        <div class="proj__brief reveal"><h3>The brief</h3><p>Every review now has a permanent page, every spot is pinned on a food map, and restaurants can book promo packages directly.</p><p>Followers get real discounts at partner restaurants when they wear the merch, which gives the brand a reason to sell shirts.</p></div>
+        <div class="reveal"><h3>What we built</h3><ul class="built"><li><b>TikTok reviews on the site</b><span>Every video, searchable by cuisine and town.</span></li><li><b>Interactive food map</b><span>Every place they've reviewed, pinned and filterable.</span></li><li><b>Service packages</b><span>Restaurants can see prices and book content directly.</span></li><li><b>Merch with perks</b><span>Shirts that unlock discounts at partner spots.</span></li></ul></div>
+      </div>
+      <div class="gallery"><figure><button type="button" data-full="../assets/work/cases/ttb-reviews.webp"><img src="../assets/work/cases/ttb-reviews-sm.webp" alt="Every review, filterable" loading="lazy"><figcaption>Every review, filterable</figcaption></button></figure><figure><button type="button" data-full="../assets/work/cases/ttb-services-sm.webp"><img src="../assets/work/cases/ttb-services-sm.webp" alt="Packages for restaurants" loading="lazy"><figcaption>Packages for restaurants</figcaption></button></figure><figure><button type="button" data-full="../assets/work/cases/ttb-merch-sm.webp"><img src="../assets/work/cases/ttb-merch-sm.webp" alt="Merch store" loading="lazy"><figcaption>Merch store</figcaption></button></figure><figure><button type="button" data-full="../assets/work/cases/ttb-partners-sm.webp"><img src="../assets/work/cases/ttb-partners-sm.webp" alt="Partner discounts" loading="lazy"><figcaption>Partner discounts</figcaption></button></figure></div>
+    </div>
+  </section>
+  <section class="proj" id="portfolio" style="--accent:#5E94F7">
+    <div class="wrap">
+      <div class="proj__head reveal">
+        <div>
+          <p class="proj__kind">Rob's personal site <span class="proj__live">Live</span></p>
+          <h2>robwiscount.org</h2>
+          <p class="proj__lede">Where the RW mark started. It's our test bench for layouts, animation and speed tricks before they show up in client work.</p>
+          <div class="proj__links"><a class="link" href="https://robwiscount.org" target="_blank" rel="noopener">robwiscount.org<span class="harrow" aria-hidden="true"><svg viewBox="0 0 10 10"><path class="harrow__line" d="M0 5h7"/><path class="harrow__tip" d="M1 1l4 4-4 4"/></svg></span></a></div>
+        </div>
+        <dl class="glance"><div><dt>Our part</dt><dd>Everything</dd></div><div><dt>Built with</dt><dd>Plain HTML, CSS and JavaScript</dd></div><div><dt>Tested by</dt><dd>Playwright and Lighthouse on every change</dd></div><div><dt>Status</dt><dd>Live</dd></div></dl>
+      </div>
+      <div class="stage reveal"><div class="stage__browser"><div class="stage__bar" aria-hidden="true"><i></i><i></i><i></i><span>robwiscount.org</span></div><img src="../assets/work/cases/folio-hero.webp" alt="robwiscount.org homepage" loading="lazy"></div><div class="stage__phone"><img src="../assets/work/cases/folio-phone.webp" alt="" loading="lazy"></div></div>
+      
+      <div class="proj__body">
+        <div class="proj__brief reveal"><h3>The brief</h3><p>No framework and no build step, and every change is tested automatically at desktop and phone sizes before it goes live.</p><p>It has an experience timeline, live Mile A Day stats, a project gallery and a game you can play in the browser.</p></div>
+        <div class="reveal"><h3>What we built</h3><ul class="built"><li><b>Hand-written code</b><span>No framework, no template, fast everywhere.</span></li><li><b>Automated testing</b><span>Every pull request is checked in a real browser.</span></li><li><b>Live data</b><span>Mile A Day stats pulled in as they happen.</span></li><li><b>A playable game</b><span>Fetch runs right on the site.</span></li></ul></div>
+      </div>
+      <div class="gallery" style="--cols:3"><figure><button type="button" data-full="../assets/work/cases/folio-bet.webp"><img src="../assets/work/cases/folio-bet-sm.webp" alt="The Mile A Day story" loading="lazy"><figcaption>The Mile A Day story</figcaption></button></figure><figure><button type="button" data-full="../assets/work/cases/folio-side-sm.webp"><img src="../assets/work/cases/folio-side-sm.webp" alt="Projects gallery" loading="lazy"><figcaption>Projects gallery</figcaption></button></figure><figure><button type="button" data-full="../assets/work/cases/folio-exp-sm.webp"><img src="../assets/work/cases/folio-exp-sm.webp" alt="Experience timeline" loading="lazy"><figcaption>Experience timeline</figcaption></button></figure></div>
+    </div>
+  </section>
+
+  <dialog class="lightbox" aria-label="Screenshot"><button type="button" aria-label="Close">×</button><img src="" alt=""><p></p></dialog>
 
   <section class="closing">
     <div class="wrap">

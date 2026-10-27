@@ -156,5 +156,29 @@
   }
 
 
+
+  /* Work page: screenshot lightbox */
+  const lb = document.querySelector(".lightbox");
+  if (lb) {
+    const img = lb.querySelector("img"), cap = lb.querySelector("p");
+    document.querySelectorAll("[data-full]").forEach((btn) => btn.addEventListener("click", () => {
+      img.src = btn.dataset.full; img.alt = btn.querySelector("img")?.alt || "";
+      cap.textContent = btn.querySelector("figcaption")?.textContent || "";
+      lb.showModal();
+    }));
+    lb.addEventListener("click", (e) => { if (e.target === lb || e.target.closest("button")) lb.close(); });
+  }
+
+  /* Work page: highlight the project you're looking at */
+  const navLinks = [...document.querySelectorAll(".proj-nav a")];
+  if (navLinks.length && "IntersectionObserver" in window) {
+    const io2 = new IntersectionObserver((entries) => entries.forEach((e) => {
+      if (!e.isIntersecting) return;
+      navLinks.forEach((a) => a.classList.toggle("is-current", a.hash === "#" + e.target.id));
+      document.querySelector(".proj-nav a.is-current")?.scrollIntoView({ block: "nearest", inline: "nearest" });
+    }), { rootMargin: "-45% 0px -50% 0px" });
+    document.querySelectorAll(".proj").forEach((sec) => io2.observe(sec));
+  }
+
   document.querySelectorAll("[data-year]").forEach((el) => (el.textContent = new Date().getFullYear()));
 })();

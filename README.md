@@ -56,5 +56,5 @@ node business-cards/export.js
 
 - Domain `revampweb.com` and the email addresses
 - Phone numbers on the cards
-- Work page screenshots in `assets/work/` were captured from the live sites (Top Dawgs and Pick5 come from their repo READMEs). Re-capture them when the sites change.
+- Work page screenshots in `assets/work/` and `assets/work/cases/` were captured from the live sites; the Mile A Day app screens come from that repo's marketing screenshots. Re-capture them when the sites change.
 - The contact form isn't wired to a backend yet (`assets/js/site.js`).
