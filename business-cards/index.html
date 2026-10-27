@@ -1,0 +1,243 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Redo Websites Business Cards</title>
+<link rel="icon" href="../assets/brand/rw-logo.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Funnel+Display:wght@500;600;700&family=Archivo:wdth,wght@62..125,400..900&family=Figtree:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Red+Hat+Mono:wght@400;500&family=Schibsted+Grotesk:wght@600;700;800&family=Unbounded:wght@700;900&display=swap">
+<style>
+/* Business card options. Cards are US standard 3.5 × 2 in.
+   Every size inside a card is in cqw of the trim box, so the same markup
+   renders the on-screen preview and the 300 dpi print export (with 0.125 in bleed). */
+:root {
+  --bg: #F3F5FA;
+  --ink: #0A1221;
+  --dim: #5D6880;
+  --line: #DFE4EE;
+  --blue: #5E94F7;
+  --blue-deep: #2A5FD8;
+  --night: #05070C;
+  color-scheme: light;
+}
+*, *::before, *::after { box-sizing: border-box; }
+[hidden] { display: none !important; }
+body { margin: 0; background: var(--bg); color: var(--ink); font-family: "Figtree", system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
+.page { max-width: 1180px; margin-inline: auto; padding-block: 48px 80px; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+.top { display: flex; justify-content: space-between; align-items: end; gap: 24px; flex-wrap: wrap; margin-bottom: 40px; }
+.top h1 { font: 800 clamp(2rem, 1.4rem + 2vw, 3rem)/1.05 "Schibsted Grotesk", sans-serif; letter-spacing: -0.03em; margin: 0; }
+.top p { color: var(--dim); margin: 10px 0 0; max-width: 56ch; }
+.seg { display: inline-flex; background: #fff; border: 1px solid var(--line); border-radius: 99px; padding: 4px; }
+.seg button { border: 0; background: none; font: 600 .92rem "Figtree", sans-serif; padding: 8px 16px; border-radius: 99px; cursor: pointer; color: var(--dim); }
+.seg button[aria-pressed="true"] { background: var(--ink); color: #fff; }
+.option { display: grid; grid-template-columns: 220px minmax(0, 1fr); gap: 32px; padding-block: 36px; border-top: 1px solid var(--line); }
+.option h2 { font: 700 1.3rem "Schibsted Grotesk", sans-serif; margin: 6px 0 8px; letter-spacing: -0.02em; }
+.option p { color: var(--dim); margin: 0; font-size: .95rem; }
+.option .tag { font: 500 .72rem "JetBrains Mono", monospace; letter-spacing: .08em; text-transform: uppercase; color: var(--blue-deep); }
+.pair { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; }
+.side { display: grid; gap: 10px; min-width: 0; }
+.side small { font: 500 .72rem "JetBrains Mono", monospace; color: var(--dim); letter-spacing: .06em; text-transform: uppercase; }
+@media (max-width: 900px) { .option { grid-template-columns: minmax(0, 1fr); gap: 18px; } }
+@media (max-width: 620px) { .pair { grid-template-columns: minmax(0, 1fr); } }
+
+/* ---------- Card frame ---------- */
+.card {
+  --bleed: 0px;
+  position: relative; overflow: hidden; width: 100%; max-width: 100%;
+  aspect-ratio: 3.5 / 2;
+  border-radius: 10px;
+  box-shadow: 0 1px 2px rgba(10,18,33,.08), 0 18px 40px -16px rgba(10,18,33,.35);
+}
+.trim { position: absolute; inset: var(--bleed); container-type: inline-size; }
+body.export { background: #fff; }
+body.export .card { --bleed: 0.125in; width: 3.75in; aspect-ratio: auto; height: 2.25in; border-radius: 0; box-shadow: none; }
+/* decoration that should run to the cut line uses --b to reach into the bleed */
+.trim { --b: calc(-1 * var(--bleed)); }
+
+/* Shared card type */
+.c-name { font-weight: 700; line-height: 1; letter-spacing: -0.02em; }
+.c-role { font-family: "JetBrains Mono", monospace; text-transform: uppercase; letter-spacing: .08em; }
+.c-lines { display: grid; gap: 1.2cqw; font-family: "JetBrains Mono", monospace; }
+
+/* ---------- 1. Signal ---------- */
+.signal-front { background: #05070D; color: #E8EDF7; }
+.signal-front .band { position: absolute; top: var(--b); right: var(--b); bottom: var(--b); width: calc(46cqw + var(--bleed)); background: url("../assets/brand/gradient-still.jpg") center / cover; clip-path: polygon(34% 0, 100% 0, 100% 100%, 0 100%); }
+.signal-front .edge { position: absolute; top: var(--b); bottom: var(--b); left: 52.4cqw; width: 15.64cqw; clip-path: polygon(calc(100% - 1.5px) 0, 100% 0, 1.5px 100%, 0 100%); background: rgba(255,255,255,.75); }
+.signal-front .logo { position: absolute; left: 7cqw; top: 8cqw; width: 10cqw; }
+.signal-front .who { position: absolute; left: 7cqw; bottom: 8cqw; display: grid; gap: 1.8cqw; }
+.signal-front .c-name { font-family: "Funnel Display", "Schibsted Grotesk", sans-serif; font-size: 6.2cqw; font-weight: 600; letter-spacing: -0.035em; }
+.signal-front .c-role { font-size: 2.1cqw; color: #8DB4FF; }
+.signal-front .c-lines { font-size: 2.4cqw; color: #A7B1C6; margin-top: 2.4cqw; }
+.signal-back { background: radial-gradient(70% 90% at 50% 45%, rgba(47,107,255,.35), rgba(47,107,255,0) 70%), #05070D; color: #E8EDF7; }
+.signal-back .inner { position: absolute; inset: 0; display: grid; place-items: center; align-content: center; gap: 3.5cqw; }
+.signal-back img { width: 21cqw; }
+.signal-back .word { font: 600 5.6cqw "Funnel Display", "Schibsted Grotesk", sans-serif; letter-spacing: -0.035em; }
+.signal-back .url { position: absolute; bottom: 6cqw; left: 0; right: 0; text-align: center; font: 500 2.2cqw "JetBrains Mono", monospace; letter-spacing: .12em; text-transform: uppercase; color: #8DB4FF; }
+
+/* ---------- 2. Midnight ---------- */
+.mid-front { background: var(--night); color: #EEF2FA; }
+.mid-front .glow { position: absolute; left: 8cqw; top: 50%; width: 40cqw; height: 40cqw; transform: translateY(-50%); background: radial-gradient(circle, rgba(94,148,247,.5), transparent 65%); filter: blur(2cqw); }
+.mid-front .logo { position: absolute; left: 14cqw; top: 50%; transform: translateY(-50%); width: 26cqw; }
+.mid-front .who { position: absolute; left: 50cqw; right: 6cqw; top: 50%; transform: translateY(-50%); display: grid; gap: 2cqw; }
+.mid-front .c-name { font-family: "Archivo", sans-serif; font-stretch: 125%; font-weight: 800; text-transform: uppercase; font-size: 5.2cqw; letter-spacing: 0; }
+.mid-front .c-role { font-size: 2cqw; color: var(--blue); }
+.mid-front .c-lines { font-size: 2.3cqw; color: #8A94AB; margin-top: 2cqw; }
+.mid-back { background: var(--blue); color: #000; }
+.mid-back .big { position: absolute; left: 7cqw; top: 9cqw; font: 900 10cqw/0.92 "Archivo", sans-serif; font-stretch: 125%; text-transform: uppercase; letter-spacing: -0.01em; }
+.mid-back .foot { position: absolute; left: 7cqw; right: 7cqw; bottom: 7cqw; display: flex; justify-content: space-between; align-items: end; font: 500 2.4cqw "JetBrains Mono", monospace; letter-spacing: .1em; text-transform: uppercase; }
+.mid-back .foot img { width: 9cqw; }
+
+/* ---------- 3. Blueprint ---------- */
+.bp-front { background-color: #EEF3FD; background-image: linear-gradient(rgba(42,95,216,.12) 1px, transparent 1px), linear-gradient(90deg, rgba(42,95,216,.12) 1px, transparent 1px); background-size: 5% 8.75%; color: #0B1633; }
+.bp-front .logo { position: absolute; right: 7cqw; top: 8cqw; width: 12cqw; }
+.bp-front .who { position: absolute; left: 7cqw; top: 9cqw; display: grid; gap: 2cqw; }
+.bp-front .c-name { font: 900 6cqw/1 "Unbounded", sans-serif; letter-spacing: -0.03em; }
+.bp-front .c-role { font-family: "Red Hat Mono", monospace; font-size: 2.3cqw; color: #2A5FD8; text-transform: none; letter-spacing: 0; }
+.bp-front .c-role::before { content: "// "; opacity: .6; }
+.bp-front .dimline { position: absolute; left: 7cqw; right: 7cqw; top: 31cqw; height: 0; border-top: 1px solid #2A5FD8; }
+.bp-front .dimline::before, .bp-front .dimline::after { content: ""; position: absolute; top: -1.2cqw; width: 1px; height: 2.4cqw; background: #2A5FD8; }
+.bp-front .dimline::before { left: 0; } .bp-front .dimline::after { right: 0; }
+.bp-front .c-lines { position: absolute; left: 7cqw; bottom: 7cqw; font-family: "Red Hat Mono", monospace; font-size: 2.6cqw; }
+.bp-back { background: #0B1633; color: #D9E5FC; }
+.bp-back svg { position: absolute; left: 12cqw; top: 9cqw; width: 76cqw; height: auto; }
+.bp-back .url { position: absolute; left: 0; right: 0; bottom: 6cqw; text-align: center; font: 500 2.4cqw "Red Hat Mono", monospace; letter-spacing: .1em; color: #5E94F7; }
+
+/* ---------- 4. Hex ---------- */
+.hex-front { background: var(--blue); color: #000; }
+.hex-front .mark { position: absolute; right: -14cqw; top: -16cqw; width: 78cqw; opacity: .95; }
+.hex-front .word { position: absolute; left: 7cqw; bottom: 7cqw; font: 800 7.4cqw/0.95 "Schibsted Grotesk", sans-serif; letter-spacing: -0.04em; }
+.hex-back { background: #fff; color: var(--ink); }
+.hex-back .stripe { position: absolute; left: var(--b); top: var(--b); bottom: var(--b); width: calc(4cqw + var(--bleed)); background: var(--blue); }
+.hex-back .who { position: absolute; left: 12cqw; top: 10cqw; display: grid; gap: 2cqw; }
+.hex-back .c-name { font: 600 6.4cqw "Funnel Display", "Schibsted Grotesk", sans-serif; letter-spacing: -0.03em; }
+.hex-back .c-role { font-size: 2.2cqw; color: var(--blue-deep); }
+.hex-back .c-lines { position: absolute; left: 12cqw; bottom: 9cqw; font-size: 2.5cqw; color: #3A4459; }
+.hex-back .logo { position: absolute; right: 7cqw; bottom: 8cqw; width: 12cqw; }
+
+.specs { margin-top: 48px; background: #fff; border: 1px solid var(--line); border-radius: 16px; padding: 24px 28px; display: grid; gap: 8px; font-size: .95rem; color: var(--dim); }
+.specs b { color: var(--ink); }
+.specs code { font-family: "JetBrains Mono", monospace; font-size: .85em; background: var(--bg); padding: 2px 6px; border-radius: 6px; }
+</style>
+</head>
+<body>
+<div class="page">
+  <div class="top">
+    <div>
+      <h1>Business cards</h1>
+      <p>Four directions, each matched to a site concept. Standard US size (3.5 × 2 in). Print-ready 300 dpi PNGs with bleed are in <code>business-cards/exports/</code>.</p>
+    </div>
+    <div class="seg" role="group" aria-label="Whose card">
+      <button type="button" data-person="rob" aria-pressed="true">Rob</button>
+      <button type="button" data-person="dave" aria-pressed="false">Dave</button>
+    </div>
+  </div>
+
+  <!-- 1 -->
+  <section class="option" data-option="signal">
+    <div><span class="tag">Option 1 · matches Signal</span><h2>Signal</h2><p>Matches the website: black, with a frame of our live gradient on the edge. The back has the RW mark filled with the same gradient.</p></div>
+    <div class="pair">
+      <div class="side"><small>Front</small>
+        <div class="card signal-front" data-export="signal-front"><div class="trim">
+          <div class="band"></div><div class="edge"></div>
+          <img class="logo" src="../assets/brand/rw-logo.svg" alt="">
+          <div class="who"><div class="c-name" data-f="name"></div><div class="c-role" data-f="role"></div>
+            <div class="c-lines"><span data-f="email"></span><span data-f="phone"></span><span data-f="web"></span></div></div>
+        </div></div>
+      </div>
+      <div class="side"><small>Back</small>
+        <div class="card signal-back" data-export="signal-back"><div class="trim"><div class="inner"><img src="../assets/brand/rw-logo-gradient.png" alt=""><div class="word">Redo Websites</div></div><div class="url" data-f="web"></div></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2 -->
+  <section class="option" data-option="midnight">
+    <div><span class="tag">Option 2 · matches Midnight</span><h2>Midnight</h2><p>Black front with the glowing mark, like the logo's own outline. The back is solid logo blue with the tagline in heavy expanded type.</p></div>
+    <div class="pair">
+      <div class="side"><small>Front</small>
+        <div class="card mid-front" data-export="midnight-front"><div class="trim">
+          <div class="glow"></div><img class="logo" src="../assets/brand/rw-logo.svg" alt="">
+          <div class="who"><div class="c-name" data-f="name"></div><div class="c-role" data-f="role"></div>
+            <div class="c-lines"><span data-f="email"></span><span data-f="phone"></span></div></div>
+        </div></div>
+      </div>
+      <div class="side"><small>Back</small>
+        <div class="card mid-back" data-export="midnight-back"><div class="trim"><div class="big">Your<br>website,<br>redone.</div><div class="foot"><span data-f="web"></span><img src="../assets/brand/rw-logo-flat.svg" alt=""></div></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3 -->
+  <section class="option" data-option="blueprint">
+    <div><span class="tag">Option 3 · matches Blueprint</span><h2>Blueprint</h2><p>Drafting-paper grid with a dimension line under the name. The navy back shows a site wireframe, a nod to what we make.</p></div>
+    <div class="pair">
+      <div class="side"><small>Front</small>
+        <div class="card bp-front" data-export="blueprint-front"><div class="trim">
+          <div class="who"><div class="c-name" data-f="name"></div><div class="c-role" data-f="role"></div></div>
+          <img class="logo" src="../assets/brand/rw-logo.svg" alt="">
+          <div class="dimline"></div>
+          <div class="c-lines"><span data-f="email"></span><span data-f="phone"></span><span data-f="web"></span></div>
+        </div></div>
+      </div>
+      <div class="side"><small>Back</small>
+        <div class="card bp-back" data-export="blueprint-back"><div class="trim">
+          <svg viewBox="0 0 280 120" fill="none" stroke="#5E94F7" stroke-width="1.2">
+            <rect x="0.6" y="0.6" width="278.8" height="118.8"/><path d="M0 12 H280"/>
+            <circle cx="7" cy="6" r="2" fill="#5E94F7"/><circle cx="14" cy="6" r="2"/><circle cx="21" cy="6" r="2"/>
+            <rect x="12" y="24" width="96" height="9" fill="#D9E5FC" stroke="none"/><rect x="12" y="37" width="72" height="9" fill="#D9E5FC" stroke="none"/>
+            <path d="M12 54 H110 M12 61 H96"/><rect x="12" y="70" width="38" height="12" fill="#5E94F7" stroke="none"/><rect x="56" y="70" width="38" height="12"/>
+            <rect x="140" y="22" width="126" height="64"/><path d="M140 22 L266 86 M266 22 L140 86" opacity=".5"/>
+            <rect x="12" y="94" width="78" height="18"/><rect x="100" y="94" width="78" height="18"/><rect x="188" y="94" width="78" height="18"/>
+          </svg>
+          <div class="url" data-f="web"></div>
+        </div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4 -->
+  <section class="option" data-option="hex">
+    <div><span class="tag">Option 4 · works with any concept</span><h2>Hex</h2><p>The boldest one. A full-bleed blue front with the mark cropped huge off the corner. The back is quiet and white, so the details are easy to read.</p></div>
+    <div class="pair">
+      <div class="side"><small>Front</small>
+        <div class="card hex-front" data-export="hex-front"><div class="trim"><img class="mark" src="../assets/brand/rw-logo-flat.svg" alt=""><div class="word">Redo<br>Websites</div></div></div>
+      </div>
+      <div class="side"><small>Back</small>
+        <div class="card hex-back" data-export="hex-back"><div class="trim">
+          <div class="stripe"></div>
+          <div class="who"><div class="c-name" data-f="name"></div><div class="c-role" data-f="role"></div></div>
+          <div class="c-lines"><span data-f="email"></span><span data-f="phone"></span><span data-f="web"></span></div>
+          <img class="logo" src="../assets/brand/rw-logo.svg" alt="">
+        </div></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="specs">
+    <b>Print specs</b>
+    <span>Trim 3.5 × 2 in · bleed 0.125 in on every side (3.75 × 2.25 in file) · 300 dpi · keep text 0.125 in inside the trim.</span>
+    <span>Exports: <code>exports/&lt;option&gt;-&lt;front|back&gt;-&lt;rob|dave&gt;.png</code> (1125 × 675 px). Upload these to Vistaprint, MOO or a local printer as-is.</span>
+    <span>Phone numbers and the domain are placeholders. Edit the <code>PEOPLE</code> list at the bottom of this file and run <code>node business-cards/export.js</code> to regenerate.</span>
+  </div>
+</div>
+
+<script>
+// Edit details here. Phone numbers and the domain are placeholders.
+const PEOPLE = {
+  rob:  { name: "Rob Wiscount", role: "Co-founder · Design & Front-end", email: "rob@redowebsites.com",  phone: "(555) 555-0142", web: "redowebsites.com" },
+  dave: { name: "Dave Simmerman", role: "Co-founder · Back-end & Hosting", email: "dave@redowebsites.com", phone: "(555) 555-0187", web: "redowebsites.com" },
+};
+const params = new URLSearchParams(location.search);
+if (params.has("export")) document.body.classList.add("export");
+const render = (key) => {
+  const p = PEOPLE[key];
+  document.querySelectorAll("[data-f]").forEach((el) => (el.textContent = p[el.dataset.f]));
+  document.querySelectorAll("[data-person]").forEach((b) => b.setAttribute("aria-pressed", String(b.dataset.person === key)));
+};
+document.querySelectorAll("[data-person]").forEach((b) => b.addEventListener("click", () => render(b.dataset.person)));
+render(params.get("person") in PEOPLE ? params.get("person") : "rob");
+</script>
+</body>
+</html>

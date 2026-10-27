@@ -1,0 +1,251 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Redo Websites · Blueprint</title>
+<link rel="icon" href="../assets/brand/rw-logo.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Red+Hat+Mono:wght@400;500&family=Red+Hat+Text:wght@400;500;700&family=Unbounded:wght@500;700;900&display=swap">
+<style>
+/* Direction C "Blueprint": a website drawn like a technical drawing.
+   Layout: drafting-paper grid, annotation labels and dimension lines,
+   blocky Unbounded headings that echo the square RW letterforms. */
+:root {
+  --paper: #EEF3FD;
+  --grid: rgba(42, 95, 216, .09);
+  --ink: #0B1633;
+  --line: #2A5FD8;
+  --blue: #5E94F7;
+  --soft: #D9E5FC;
+  --dim: #4B5A7D;
+  --display: "Unbounded", "Arial Black", sans-serif;
+  --body: "Red Hat Text", "Segoe UI", sans-serif;
+  --mono: "Red Hat Mono", ui-monospace, Menlo, monospace;
+  color-scheme: light;
+}
+*, *::before, *::after { box-sizing: border-box; }
+[hidden] { display: none !important; }
+body {
+  margin: 0; color: var(--ink); font-family: var(--body); line-height: 1.6; -webkit-font-smoothing: antialiased; overflow-x: hidden;
+  background-color: var(--paper);
+  background-image: linear-gradient(var(--grid) 1px, transparent 1px), linear-gradient(90deg, var(--grid) 1px, transparent 1px),
+    linear-gradient(rgba(42,95,216,.04) 1px, transparent 1px), linear-gradient(90deg, rgba(42,95,216,.04) 1px, transparent 1px);
+  background-size: 120px 120px, 120px 120px, 24px 24px, 24px 24px;
+}
+a { color: inherit; }
+:focus-visible { outline: 2px dashed var(--line); outline-offset: 4px; }
+h1, h2, h3 { font-family: var(--display); margin: 0; line-height: 1.02; letter-spacing: -0.03em; text-wrap: balance; }
+p { margin: 0; }
+.wrap { max-width: 1200px; margin-inline: auto; padding-left: max(24px, env(safe-area-inset-left, 0px)); padding-right: max(24px, env(safe-area-inset-right, 0px)); }
+@media (max-width: 480px) { .wrap { padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); } }
+.note { font-family: var(--mono); font-size: .78rem; color: var(--line); letter-spacing: .02em; }
+.note::before { content: "// "; opacity: .6; }
+.btn { display: inline-flex; gap: 10px; align-items: center; font-family: var(--display); font-weight: 700; font-size: .86rem; padding: 14px 20px; text-decoration: none; border: 2px solid var(--ink); background: var(--ink); color: #fff; box-shadow: 5px 5px 0 var(--blue); transition: transform .2s, box-shadow .2s; }
+.btn:hover { transform: translate(-2px, -2px); box-shadow: 7px 7px 0 var(--blue); }
+.btn--alt { background: transparent; color: var(--ink); box-shadow: none; }
+.btn--alt:hover { box-shadow: 4px 4px 0 var(--ink); }
+
+header { border-bottom: 1.5px solid var(--ink); background: var(--paper); position: sticky; top: env(safe-area-inset-top, 0px); z-index: 10; }
+body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); background: var(--paper); z-index: 20; }
+.nav { display: flex; align-items: center; height: 70px; gap: 24px; }
+.nav .logo { display: flex; align-items: center; gap: 12px; font-family: var(--display); font-weight: 700; text-decoration: none; font-size: .95rem; }
+.nav .logo img { width: 32px; }
+.nav nav { margin-left: auto; display: flex; gap: 0; font-family: var(--mono); font-size: .85rem; }
+.nav nav a { text-decoration: none; padding: 8px 14px; border-left: 1px solid rgba(11,22,51,.15); }
+.nav nav a:hover { background: var(--soft); }
+@media (max-width: 760px) { .nav nav { display: none; } .nav .btn { margin-left: auto; padding: 10px 14px; } }
+
+/* Hero */
+.hero { padding-block: 64px 80px; }
+.hero__grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr); gap: 56px; align-items: center; }
+.hero h1 { font-size: clamp(2.3rem, 1rem + 4.4vw, 5rem); font-weight: 900; margin-top: 18px; }
+.hero h1 span { color: var(--line); }
+.hero p { margin-top: 22px; font-size: 1.15rem; color: var(--dim); max-width: 44ch; }
+.hero .actions { display: flex; flex-wrap: wrap; gap: 16px; margin-top: 32px; }
+@media (max-width: 900px) { .hero__grid { grid-template-columns: minmax(0, 1fr); } }
+
+.drawing { position: relative; min-width: 0; }
+.drawing svg { width: 100%; height: auto; overflow: visible; }
+.drawing .stroke { fill: none; stroke: var(--line); stroke-width: 2; stroke-dasharray: var(--len, 1200); stroke-dashoffset: 0; }
+.drawing .fill { opacity: 1; }
+.drawing .dim { stroke: var(--line); stroke-width: 1; fill: none; }
+.drawing text { font-family: var(--mono); font-size: 12px; fill: var(--line); }
+@media (prefers-reduced-motion: no-preference) {
+  .drawing .stroke { animation: draw 1.8s cubic-bezier(.6,0,.2,1) both; animation-delay: var(--d, 0s); }
+  .drawing .fill { animation: fillin .6s ease both; animation-delay: calc(1.6s + var(--d, 0s)); }
+  @keyframes draw { from { stroke-dashoffset: var(--len, 1200); } }
+  @keyframes fillin { from { opacity: 0; } }
+}
+
+/* Sheet sections */
+.sheet { border: 1.5px solid var(--ink); background: rgba(255,255,255,.55); position: relative; }
+.sheet__label { position: absolute; top: -12px; left: 20px; background: var(--paper); padding: 0 10px; font-family: var(--mono); font-size: .78rem; font-weight: 500; letter-spacing: .06em; text-transform: uppercase; }
+section.s { padding-block: 56px; }
+.s h2 { font-size: clamp(1.8rem, 1rem + 2.6vw, 3.2rem); max-width: 18ch; }
+
+.spec { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); }
+.spec > div { padding: 32px 26px; border-right: 1px solid rgba(11,22,51,.18); display: grid; gap: 12px; align-content: start; }
+.spec > div:last-child { border-right: 0; }
+.spec h3 { font-size: 1.05rem; }
+.spec p { color: var(--dim); font-size: .95rem; }
+.spec .step { font-family: var(--display); font-weight: 900; font-size: 2.6rem; color: var(--blue); line-height: 1; -webkit-text-stroke: 1.5px var(--ink); }
+@media (max-width: 900px) { .spec { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); } .spec > div:nth-child(2) { border-right: 0; } .spec > div:nth-child(-n+2) { border-bottom: 1px solid rgba(11,22,51,.18); } }
+@media (max-width: 520px) { .spec { grid-template-columns: minmax(0, 1fr); } .spec > div { border-right: 0; border-bottom: 1px solid rgba(11,22,51,.18); } }
+
+.work { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 28px; margin-top: 36px; }
+.wk { text-decoration: none; display: grid; gap: 12px; }
+.wk__img { aspect-ratio: 4 / 3; border: 1.5px solid var(--ink); position: relative; display: grid; align-content: end; padding: 18px; font-family: var(--display); font-weight: 900; font-size: 1.5rem; line-height: .95; transition: transform .3s, box-shadow .3s; max-width: 100%; }
+.wk:hover .wk__img { transform: translate(-4px, -4px); box-shadow: 8px 8px 0 var(--blue); }
+.wk__meta { display: flex; justify-content: space-between; font-family: var(--mono); font-size: .82rem; gap: 12px; }
+.wk__meta b { font-family: var(--body); font-size: 1rem; }
+@media (max-width: 860px) { .work { grid-template-columns: minmax(0, 1fr); } }
+
+.table-wrap { overflow-x: auto; margin-top: 36px; }
+table { width: 100%; border-collapse: collapse; min-width: 640px; }
+th, td { text-align: left; padding: 16px 18px; border-bottom: 1px solid rgba(11,22,51,.18); vertical-align: top; }
+thead th { font-family: var(--mono); font-weight: 500; font-size: .78rem; text-transform: uppercase; letter-spacing: .06em; color: var(--line); border-bottom: 1.5px solid var(--ink); }
+td.tier { font-family: var(--display); font-weight: 700; }
+td.price { font-family: var(--display); font-weight: 900; font-size: 1.5rem; white-space: nowrap; }
+td.price small { font-family: var(--mono); font-size: .75rem; font-weight: 400; color: var(--dim); }
+tr.hot td { background: var(--soft); }
+
+.ms { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 40px; align-items: center; padding: 40px; margin-top: 40px; }
+.ms p { color: var(--dim); margin-top: 14px; max-width: 56ch; }
+.stamp { width: 170px; height: 170px; border-radius: 50%; border: 3px solid var(--line); color: var(--line); display: grid; place-items: center; text-align: center; font-family: var(--display); font-weight: 900; font-size: .95rem; line-height: 1.15; transform: rotate(-12deg); position: relative; text-transform: uppercase; }
+.stamp::before { content: ""; position: absolute; inset: 7px; border: 1.5px dashed var(--line); border-radius: 50%; }
+@media (max-width: 700px) { .ms { grid-template-columns: minmax(0, 1fr); padding: 28px 22px; } .stamp { width: 130px; height: 130px; font-size: .78rem; } }
+
+.cta { padding-block: 96px; text-align: center; }
+.cta h2 { font-size: clamp(2.2rem, 1rem + 4vw, 4.4rem); max-width: 16ch; margin-inline: auto; }
+.cta p { color: var(--dim); margin: 20px auto 32px; max-width: 46ch; }
+.cta .actions { display: flex; justify-content: center; flex-wrap: wrap; gap: 16px; }
+footer { border-top: 1.5px solid var(--ink); padding-block: 24px; font-family: var(--mono); font-size: .8rem; }
+footer .wrap { display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation: none !important; transition: none !important; } }
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap nav">
+    <a class="logo" href="#"><img src="../assets/brand/rw-logo.svg" alt="">Redo Websites</a>
+    <nav aria-label="Main"><a href="#process">Process</a><a href="#work">Work</a><a href="#pricing">Pricing</a><a href="#contact">Contact</a></nav>
+    <a class="btn" href="#contact">Start a project</a>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="wrap hero__grid">
+      <div>
+        <span class="note">rev. 2.0 · your website</span>
+        <h1>Websites, <span>engineered</span> to win customers.</h1>
+        <p>We plan every page like a blueprint: who visits, what they need and what you want them to do next. Then we build it by hand and host it ourselves.</p>
+        <div class="actions"><a class="btn" href="#contact">Start a project →</a><a class="btn btn--alt" href="#pricing">See pricing</a></div>
+      </div>
+      <div class="drawing" aria-hidden="true">
+        <svg viewBox="0 0 560 420">
+          <!-- dimension lines -->
+          <path class="dim" d="M20 18 H540 M20 12 V24 M540 12 V24"/>
+          <text x="250" y="12">1440 px</text>
+          <path class="dim" d="M552 40 V400 M546 40 H558 M546 400 H558"/>
+          <text x="520" y="224" transform="rotate(90 556 224)">fold</text>
+          <!-- browser frame -->
+          <rect class="fill" x="20" y="40" width="520" height="360" fill="#FFFFFF" style="--d:.2s"/>
+          <rect class="stroke" x="20" y="40" width="520" height="360" style="--len:1760"/>
+          <path class="stroke" d="M20 66 H540" style="--len:520;--d:.2s"/>
+          <circle cx="36" cy="53" r="4" fill="#5E94F7" class="fill"/><circle cx="50" cy="53" r="4" fill="#D9E5FC" class="fill"/><circle cx="64" cy="53" r="4" fill="#D9E5FC" class="fill"/>
+          <!-- nav -->
+          <rect class="fill" x="44" y="84" width="60" height="12" fill="#0B1633" style="--d:.3s"/>
+          <path class="stroke" d="M330 90 H370 M386 90 H426 M442 90 H482" style="--len:300;--d:.3s"/>
+          <!-- hero block -->
+          <rect class="fill" x="44" y="126" width="230" height="22" fill="#0B1633" style="--d:.4s"/>
+          <rect class="fill" x="44" y="156" width="180" height="22" fill="#0B1633" style="--d:.45s"/>
+          <path class="stroke" d="M44 198 H260 M44 212 H230" style="--len:440;--d:.5s"/>
+          <rect class="fill" x="44" y="236" width="96" height="30" fill="#5E94F7" style="--d:.6s"/>
+          <rect class="stroke" x="150" y="236" width="90" height="30" style="--len:240;--d:.6s"/>
+          <!-- image -->
+          <rect class="fill" x="300" y="120" width="216" height="160" fill="#D9E5FC" style="--d:.5s"/>
+          <rect class="stroke" x="300" y="120" width="216" height="160" style="--len:752;--d:.4s"/>
+          <path class="stroke" d="M300 120 L516 280 M516 120 L300 280" style="--len:540;--d:.5s" opacity=".5"/>
+          <!-- cards -->
+          <rect class="stroke" x="44" y="304" width="148" height="76" style="--len:448;--d:.7s"/>
+          <rect class="stroke" x="206" y="304" width="148" height="76" style="--len:448;--d:.8s"/>
+          <rect class="stroke" x="368" y="304" width="148" height="76" style="--len:448;--d:.9s"/>
+          <!-- callouts -->
+          <path class="dim" d="M140 251 C 180 330, 120 400, 60 410" stroke-dasharray="3 3"/>
+          <text x="-10" y="414">primary CTA</text>
+          <path class="dim" d="M516 200 H548" stroke-dasharray="3 3"/>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <section class="s" id="process">
+    <div class="wrap">
+      <span class="note">sheet 01 · process</span>
+      <h2 style="margin-top:12px">From sketch to live site in four steps.</h2>
+      <div class="sheet" style="margin-top:36px">
+        <span class="sheet__label">Process</span>
+        <div class="spec">
+          <div><span class="step">01</span><h3>Discover</h3><p>A 30-minute call about your business and customers. Fixed quote within two days.</p></div>
+          <div><span class="step">02</span><h3>Design</h3><p>Clickable preview of your key pages. Two rounds of changes included.</p></div>
+          <div><span class="step">03</span><h3>Build</h3><p>Hand-coded on a private staging link you can check from your phone.</p></div>
+          <div><span class="step">04</span><h3>Host</h3><p>Dave connects your domain, launches the site and keeps it running.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="s" id="work">
+    <div class="wrap">
+      <span class="note">sheet 02 · built</span>
+      <h2 style="margin-top:12px">Recent work</h2>
+      <div class="work">
+        <a class="wk" href="../site/work.html#trouble-brewing"><div class="wk__img" style="background:#0B0F19 url(../assets/work/trouble-brewing.jpg) left top/cover" role="img" aria-label="Screenshot"></div><div class="wk__meta"><b>Trouble Brewing Coffee House</b><span>launching soon</span></div></a>
+        <a class="wk" href="../site/work.html#pressed"><div class="wk__img" style="background:#0B0F19 url(../assets/work/pressed-by-jh.jpg) left top/cover" role="img" aria-label="Screenshot"></div><div class="wk__meta"><b>Pressed By J&amp;H</b><span>live</span></div></a>
+        <a class="wk" href="../site/work.html#portfolio"><div class="wk__img" style="background:#0B0F19 url(../assets/work/robwiscount.jpg) left top/cover" role="img" aria-label="Screenshot"></div><div class="wk__meta"><b>Rob's portfolio</b><span>live</span></div></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="s" id="pricing">
+    <div class="wrap">
+      <span class="note">sheet 03 · pricing</span>
+      <h2 style="margin-top:12px">Fixed prices, written down.</h2>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Tier</th><th>Price</th><th>Pages</th><th>Includes</th><th>Timeline</th></tr></thead>
+          <tbody>
+            <tr><td class="tier">Launch</td><td class="price">$1,800</td><td>Up to 5</td><td>Custom design, contact form, basic SEO, 2 revision rounds</td><td>~3 weeks</td></tr>
+            <tr class="hot"><td class="tier">Growth ★</td><td class="price">$4,200</td><td>Up to 12</td><td>Self-editable content, custom animation, analytics, 3 revision rounds</td><td>5–6 weeks</td></tr>
+            <tr><td class="tier">Custom</td><td class="price"><small>from </small>$8,500</td><td>Any</td><td>Online stores, booking, memberships, integrations, migration</td><td>Scoped</td></tr>
+            <tr><td class="tier">Care plans</td><td class="price">$39–249<small>/mo</small></td><td>—</td><td>Hosting, SSL, backups, monitoring, monthly edits</td><td>Ongoing</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="sheet ms">
+        <span class="sheet__label">Exception · Small business</span>
+        <div>
+          <h3 style="font-size:clamp(1.4rem,1rem + 1.4vw,2.2rem)">Small business? Bring your budget, not our price list.</h3>
+          <p>Local shops, new businesses and nonprofits can apply for our Main Street Program. Tell us what you can spend and we'll design the best site that fits it, with payment plans if you need them.</p>
+          <div style="margin-top:24px"><a class="btn" href="#contact">Tell us your budget →</a></div>
+        </div>
+        <div class="stamp" aria-hidden="true">Main<br>Street<br>Approved</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta" id="contact">
+    <div class="wrap">
+      <span class="note">sheet 04 · next step</span>
+      <h2 style="margin-top:14px">Send us your site. We'll send back a plan.</h2>
+      <p>Share your current website (or your idea) and we'll reply within one business day with what we'd change and a ballpark price.</p>
+      <div class="actions"><a class="btn" href="../site/contact.html">Start a project →</a><a class="btn btn--alt" href="../site/contact.html">hello@redowebsites.com</a></div>
+    </div>
+  </section>
+</main>
+<footer><div class="wrap"><span>© 2026 Redo Websites</span><span>Concept C · Blueprint</span></div></footer>
+</body>
+</html>

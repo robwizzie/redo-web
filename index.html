@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Redo Websites Concepts</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="icon" href="assets/brand/rw-logo.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&family=JetBrains+Mono:wght@500&family=Funnel+Display:wght@500;600;700&display=swap">
+<style>
+/* Concept board for Rob and Dave. Single dark look on purpose: the logo's black.
+   Layout: one reading column, concept cards in a 3-up grid, reference tables below. */
+:root {
+  --bg: #07090E;
+  --panel: #10141E;
+  --line: #1E2433;
+  --text: #EDF1FA;
+  --dim: #8E98AE;
+  --blue: #5E94F7;
+  --display: "Funnel Display", "Helvetica Neue", Arial, sans-serif;
+  --body: "Figtree", system-ui, sans-serif;
+  --mono: "JetBrains Mono", ui-monospace, Menlo, monospace;
+  color-scheme: dark;
+}
+*, *::before, *::after { box-sizing: border-box; }
+[hidden] { display: none !important; }
+body { margin: 0; background: var(--bg); color: var(--text); font-family: var(--body); line-height: 1.6; -webkit-font-smoothing: antialiased; }
+a { color: var(--blue); }
+:focus-visible { outline: 2px solid var(--blue); outline-offset: 3px; border-radius: 4px; }
+h1, h2, h3 { font-family: var(--display); margin: 0; letter-spacing: -0.025em; line-height: 1.1; text-wrap: balance; }
+p { margin: 0; }
+.wrap { max-width: 1120px; margin-inline: auto; padding-block: 56px 96px; padding-left: max(20px, env(safe-area-inset-left, 0px)); padding-right: max(20px, env(safe-area-inset-right, 0px)); display: grid; gap: 80px; }
+@media (max-width: 480px) { .wrap { padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); } }
+.wrap > * { min-width: 0; }
+.label { font-family: var(--display); font-weight: 700; font-size: 1rem; letter-spacing: -0.01em; color: #8DB4FF; }
+
+.intro { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 32px; align-items: center; }
+.intro img { width: 120px; }
+.intro h1 { font-size: clamp(2.2rem, 1.4rem + 3vw, 3.8rem); font-weight: 800; margin-top: 8px; }
+.intro p { color: var(--dim); margin-top: 14px; max-width: 62ch; font-size: 1.08rem; }
+@media (max-width: 600px) { .intro { grid-template-columns: minmax(0, 1fr); } .intro img { width: 84px; } }
+
+.sec-head { display: grid; gap: 8px; margin-bottom: 28px; }
+.sec-head h2 { font-size: clamp(1.5rem, 1.2rem + 1.2vw, 2.1rem); }
+.sec-head p { color: var(--dim); max-width: 64ch; }
+
+.concepts { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; }
+.concept { background: var(--panel); border: 1px solid var(--line); border-radius: 14px; overflow: hidden; display: grid; grid-template-rows: auto 1fr; transition: border-color .25s, transform .3s; }
+.concept:hover { border-color: var(--blue); transform: translateY(-3px); }
+.concept img { width: 100%; aspect-ratio: 16 / 10; object-fit: cover; object-position: top; display: block; border-bottom: 1px solid var(--line); max-width: 100%; }
+.concept__body { padding: 20px 22px 22px; display: grid; gap: 10px; align-content: start; }
+.concept h3 { font-size: 1.3rem; display: flex; justify-content: space-between; align-items: baseline; gap: 10px; }
+.concept h3 span { font: 500 .7rem var(--mono); letter-spacing: .08em; text-transform: uppercase; color: var(--dim); }
+.concept p { color: var(--dim); font-size: .95rem; }
+.links { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 6px; }
+.links a { font-size: .86rem; font-weight: 600; text-decoration: none; padding: 7px 12px; border-radius: 99px; background: rgba(94,148,247,.12); }
+.links a:first-child { background: var(--blue); color: #000; }
+.links a:hover { background: rgba(94,148,247,.25); }
+.links a:first-child:hover { background: #7AA8FA; }
+.concept--main { display: grid; grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr); grid-template-rows: none; }
+.concept--main img { height: 100%; border-bottom: 0; border-right: 1px solid var(--line); }
+.concept--main .concept__body { align-content: center; padding: 28px; }
+@media (max-width: 800px) { .concept--main { grid-template-columns: minmax(0, 1fr); } .concept--main img { border-right: 0; border-bottom: 1px solid var(--line); } }
+.concept h3 .pick { font: 500 .7rem var(--mono); color: #000; background: var(--blue); padding: 3px 7px; border-radius: 4px; letter-spacing: .06em; }
+@media (max-width: 900px) { .concepts { grid-template-columns: minmax(0, 1fr); max-width: 560px; } }
+
+.cards-row { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); gap: 32px; align-items: center; background: var(--panel); border: 1px solid var(--line); border-radius: 14px; padding: 24px; }
+.cards-row img { width: 100%; border-radius: 8px; max-width: 100%; }
+.cards-row ul { margin: 14px 0 18px; padding-left: 18px; color: var(--dim); display: grid; gap: 4px; }
+@media (max-width: 800px) { .cards-row { grid-template-columns: minmax(0, 1fr); } }
+
+.brand { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px; }
+.swatch { border-radius: 12px; overflow: hidden; border: 1px solid var(--line); background: var(--panel); }
+.swatch i { display: block; height: 84px; }
+.swatch div { padding: 12px 14px; display: grid; gap: 2px; }
+.swatch b { font-size: .95rem; }
+.swatch code { font: 500 .8rem var(--mono); color: var(--dim); user-select: all; }
+@media (max-width: 760px) { .brand { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+
+.table-wrap { overflow-x: auto; border: 1px solid var(--line); border-radius: 14px; }
+table { width: 100%; border-collapse: collapse; min-width: 640px; font-size: .95rem; }
+th, td { padding: 14px 18px; text-align: left; border-bottom: 1px solid var(--line); vertical-align: top; }
+thead th { font: 500 .72rem var(--mono); letter-spacing: .08em; text-transform: uppercase; color: var(--dim); background: var(--panel); }
+tbody tr:last-child td { border-bottom: 0; }
+td.num { font-family: var(--display); font-weight: 700; white-space: nowrap; font-size: 1.05rem; }
+td.why { color: var(--dim); }
+.ms { margin-top: 16px; padding: 20px 22px; border-radius: 14px; background: var(--blue); color: #000; display: grid; gap: 6px; }
+.ms b { font-family: var(--display); font-size: 1.1rem; }
+
+.todo { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
+.todo div { background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 18px 20px; display: grid; gap: 6px; align-content: start; }
+.todo b { font-family: var(--display); }
+.todo p { color: var(--dim); font-size: .93rem; }
+.todo .who { font: 500 .7rem var(--mono); letter-spacing: .08em; text-transform: uppercase; color: var(--blue); }
+@media (max-width: 700px) { .todo { grid-template-columns: minmax(0, 1fr); } }
+footer { color: var(--dim); font-size: .85rem; border-top: 1px solid var(--line); padding-top: 24px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="intro">
+    <img src="assets/brand/rw-logo.svg" alt="Redo Websites logo">
+    <div>
+      <span class="label">Concept board for Rob and Dave</span>
+      <h1>Redo Websites</h1>
+      <p>We're going with Signal: a dark site with our own moving gradient in the logo's blues. Below it are the business cards, the price sheet and what's left before launch.</p>
+    </div>
+  </header>
+
+  <section>
+    <div class="sec-head">
+      <span class="label">Website</span>
+      <h2>Signal, locked in</h2>
+      <p>A full working site with home, work, pricing and contact pages.</p>
+    </div>
+    <article class="concept concept--main">
+      <a href="site/index.html"><img src="assets/previews/signal.jpg" alt="Signal homepage"></a>
+      <div class="concept__body">
+        <h3>Signal <span class="pick">Main site</span></h3>
+        <p>Our own WebGL gradient in an angled ribbon, the RW mark filled with the same live gradient, real screenshots of Rob's work in a carousel, and both of you on the homepage.</p>
+        <div class="links"><a href="site/index.html">Home</a><a href="site/work.html">Work</a><a href="site/pricing.html">Pricing</a><a href="site/contact.html">Contact</a></div>
+      </div>
+    </article>
+    <p style="color:var(--dim);font-size:.92rem;margin-top:14px">The earlier directions are kept for reference: <a href="concepts/midnight.html">Midnight</a> and <a href="concepts/blueprint.html">Blueprint</a>.</p>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <span class="label">Business cards</span>
+      <h2>Four cards, ready to print</h2>
+    </div>
+    <div class="cards-row">
+      <a href="business-cards/index.html"><img src="assets/previews/cards.jpg" alt="Four business card front designs"></a>
+      <div>
+        <h3 style="font-size:1.3rem">Signal, Midnight, Blueprint and Hex</h3>
+        <ul>
+          <li>Front and back for both Rob and Dave</li>
+          <li>3.5 × 2 in, 0.125 in bleed, 300 dpi PNG exports</li>
+          <li>Signal now matches the dark site. Dave's card says Dave Simmerman.</li>
+        </ul>
+        <div class="links"><a href="business-cards/index.html">View all cards</a></div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <span class="label">Brand</span>
+      <h2>Colors from the logo</h2>
+      <p>The blue is sampled straight from the RW mark. Use the deep blue for text links on white, since the logo blue is too light for small text there.</p>
+    </div>
+    <div class="brand">
+      <div class="swatch"><i style="background:#5E94F7"></i><div><b>RW Blue</b><code>#5E94F7</code></div></div>
+      <div class="swatch"><i style="background:#000000;box-shadow:inset 0 0 0 1px #1E2433"></i><div><b>Mark Black</b><code>#000000</code></div></div>
+      <div class="swatch"><i style="background:#2A5FD8"></i><div><b>Deep Blue</b><code>#2A5FD8</code></div></div>
+      <div class="swatch"><i style="background:#0E1F45"></i><div><b>Night</b><code>#0E1F45</code></div></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <span class="label">Pricing</span>
+      <h2>Suggested starting prices</h2>
+      <p>Set to undercut agencies ($8k–$25k for similar work) while staying above DIY builders, so the price signals custom work. Raise prices after Trouble Brewing launches and the portfolio grows.</p>
+    </div>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Package</th><th>Price</th><th>What's in it</th><th>Why this number</th></tr></thead>
+        <tbody>
+          <tr><td>Launch</td><td class="num">$1,800</td><td>Up to 5 pages, custom design, contact form, basic SEO, 2 revision rounds, ~3 weeks</td><td class="why">About 25–30 hours of work. Freelance market rate for a small custom site is $1.5k–$3k.</td></tr>
+          <tr><td>Growth ★</td><td class="num">$4,200</td><td>Up to 12 pages, self-editable content, animation, analytics, 3 rounds, 5–6 weeks</td><td class="why">The anchor most clients should pick. CMS and motion are where you stand out.</td></tr>
+          <tr><td>Custom</td><td class="num">from $8,500</td><td>Online stores, booking, memberships, integrations, migration</td><td class="why">Needs Dave's back-end time. Always quote after a discovery call.</td></tr>
+          <tr><td>Host</td><td class="num">$39/mo</td><td>Hosting, SSL, domain, daily backups, uptime monitoring</td><td class="why">On par with Squarespace and Wix plans, but fully managed.</td></tr>
+          <tr><td>Care</td><td class="num">$99/mo</td><td>Host plus security updates, 1 hr edits, monthly report</td><td class="why">Recurring revenue. 10 clients on Care is about $12k a year.</td></tr>
+          <tr><td>Partner</td><td class="num">$249/mo</td><td>Care plus 4 hrs edits, SEO tune-ups, quarterly refresh call</td><td class="why">For busy owners who want a web team on call.</td></tr>
+          <tr><td>Extra work</td><td class="num">$85/hr</td><td>Anything outside a plan, quoted first</td><td class="why">Keeps small asks profitable.</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="ms">
+      <b>Main Street Program (no public price)</b>
+      <span>For local shops, new businesses and nonprofits. The site says "tell us your budget" and the contact form has a "Small business: let's talk" option. Offer payment plans over 3–6 months, a smaller first version (e.g. one great page) and reduced hosting. A suggested floor is around $600, kept internal.</span>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <span class="label">Before launch</span>
+      <h2>Open items</h2>
+    </div>
+    <div class="todo">
+      <div><span class="who">Both</span><b>Domain and email</b><p>We're Redo Websites at redowebsites.com. Set up the hello@, rob@ and dave@ inboxes before handing out cards.</p></div>
+      <div><span class="who">Rob</span><b>Confirm the portfolio</b><p>The Work page now has full case studies for Trouble Brewing, Pressed By J&amp;H, Mile A Day, Traveling Tastebuds and robwiscount.org. Check that each one is yours to show and the descriptions are right.</p></div>
+      <div><span class="who">Dave</span><b>Contact form backend</b><p>The form is front-end only. It needs an endpoint that emails you both and stores leads, plus spam protection.</p></div>
+      <div><span class="who">Dave</span><b>Hosting stack</b><p>Pick where client sites live, how deploys work and how backups and uptime checks run. The Care plan prices assume this is mostly automated.</p></div>
+      <div><span class="who">Both</span><b>Phone numbers</b><p>The cards still use placeholder numbers. Add the real ones in the card file, then re-run the export script.</p></div>
+      <div><span class="who">Rob</span><b>Old Trouble Brewing screenshot</b><p>Save a screenshot of the archived Wix site and we'll put it in the hero slider, next to the new site.</p></div>
+      <div><span class="who">Rob</span><b>Footer art</b><p>The footer has a spot ready for your illustration.</p></div>
+      <div><span class="who">Both</span><b>Testimonials</b><p>Ask Trouble Brewing for a quote now that the site is live. A real testimonial will do more for the homepage than anything else.</p></div>
+    </div>
+  </section>
+
+  <footer>Prototype files live in the revamp-web repo. Fonts are from Google Fonts. Nothing on the site uses a template or page builder.</footer>
+</div>
+</body>
+</html>
