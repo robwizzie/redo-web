@@ -1,5 +1,14 @@
 /* Revamp Web: shared site behaviour (no dependencies). The gradient lives in gradient.js. */
 (() => {
+  /* Opening a page from a link always starts at the top, unless the link
+     points at a section (#pricing). Back/forward keeps the old position. */
+  const nav = performance.getEntriesByType?.("navigation")[0];
+  if (nav?.type !== "back_forward" && !location.hash) {
+    if ("scrollRestoration" in history) history.scrollRestoration = "manual";
+    window.scrollTo(0, 0);
+    addEventListener("load", () => window.scrollTo(0, 0), { once: true });
+  }
+
   const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
   /* Sticky header + mobile menu */
