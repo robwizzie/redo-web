@@ -158,6 +158,11 @@
 
   /* Footer art drifts a little with the pointer */
   const footer = document.querySelector(".footer");
+  if (footer && !reduceMotion && "IntersectionObserver" in window) {
+    footer.classList.add("is-pre");
+    const fio = new IntersectionObserver(([e]) => { if (e.isIntersecting) { footer.classList.remove("is-pre"); fio.disconnect(); } }, { threshold: 0.25 });
+    fio.observe(footer);
+  }
   if (footer && !reduceMotion && window.matchMedia("(hover: hover)").matches) {
     footer.addEventListener("pointermove", (e) => {
       const r = footer.getBoundingClientRect();
