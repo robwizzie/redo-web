@@ -155,5 +155,18 @@
     gaugeTiles.forEach((t) => io.observe(t));
   }
 
+
+  /* Footer art drifts a little with the pointer */
+  const footer = document.querySelector(".footer");
+  if (footer && !reduceMotion && window.matchMedia("(hover: hover)").matches) {
+    footer.addEventListener("pointermove", (e) => {
+      const r = footer.getBoundingClientRect();
+      const x = (e.clientX - r.left) / r.width - 0.5, y = (e.clientY - r.top) / r.height - 0.5;
+      footer.style.setProperty("--px", (-x * 14).toFixed(1) + "px");
+      footer.style.setProperty("--py", (-y * 10).toFixed(1) + "px");
+    });
+    footer.addEventListener("pointerleave", () => { footer.style.setProperty("--px", "0px"); footer.style.setProperty("--py", "0px"); });
+  }
+
   document.querySelectorAll("[data-year]").forEach((el) => (el.textContent = new Date().getFullYear()));
 })();
